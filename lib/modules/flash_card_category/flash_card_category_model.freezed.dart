@@ -24,6 +24,9 @@ mixin _$FlashCardCategoryModel {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get information => throw _privateConstructorUsedError;
+  bool get isRecent => throw _privateConstructorUsedError;
+  int get lastCardIndex => throw _privateConstructorUsedError;
+  DateTime get lastUpdate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +40,13 @@ abstract class $FlashCardCategoryModelCopyWith<$Res> {
           $Res Function(FlashCardCategoryModel) then) =
       _$FlashCardCategoryModelCopyWithImpl<$Res, FlashCardCategoryModel>;
   @useResult
-  $Res call({String id, String title, String information});
+  $Res call(
+      {String id,
+      String title,
+      String information,
+      bool isRecent,
+      int lastCardIndex,
+      DateTime lastUpdate});
 }
 
 /// @nodoc
@@ -57,6 +66,9 @@ class _$FlashCardCategoryModelCopyWithImpl<$Res,
     Object? id = null,
     Object? title = null,
     Object? information = null,
+    Object? isRecent = null,
+    Object? lastCardIndex = null,
+    Object? lastUpdate = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -71,6 +83,18 @@ class _$FlashCardCategoryModelCopyWithImpl<$Res,
           ? _value.information
           : information // ignore: cast_nullable_to_non_nullable
               as String,
+      isRecent: null == isRecent
+          ? _value.isRecent
+          : isRecent // ignore: cast_nullable_to_non_nullable
+              as bool,
+      lastCardIndex: null == lastCardIndex
+          ? _value.lastCardIndex
+          : lastCardIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      lastUpdate: null == lastUpdate
+          ? _value.lastUpdate
+          : lastUpdate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -84,7 +108,13 @@ abstract class _$$FlashCardCategoryModelImplCopyWith<$Res>
       __$$FlashCardCategoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, String information});
+  $Res call(
+      {String id,
+      String title,
+      String information,
+      bool isRecent,
+      int lastCardIndex,
+      DateTime lastUpdate});
 }
 
 /// @nodoc
@@ -103,6 +133,9 @@ class __$$FlashCardCategoryModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? information = null,
+    Object? isRecent = null,
+    Object? lastCardIndex = null,
+    Object? lastUpdate = null,
   }) {
     return _then(_$FlashCardCategoryModelImpl(
       id: null == id
@@ -117,6 +150,18 @@ class __$$FlashCardCategoryModelImplCopyWithImpl<$Res>
           ? _value.information
           : information // ignore: cast_nullable_to_non_nullable
               as String,
+      isRecent: null == isRecent
+          ? _value.isRecent
+          : isRecent // ignore: cast_nullable_to_non_nullable
+              as bool,
+      lastCardIndex: null == lastCardIndex
+          ? _value.lastCardIndex
+          : lastCardIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      lastUpdate: null == lastUpdate
+          ? _value.lastUpdate
+          : lastUpdate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -125,7 +170,12 @@ class __$$FlashCardCategoryModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FlashCardCategoryModelImpl implements _FlashCardCategoryModel {
   const _$FlashCardCategoryModelImpl(
-      {required this.id, required this.title, required this.information});
+      {required this.id,
+      required this.title,
+      required this.information,
+      required this.isRecent,
+      required this.lastCardIndex,
+      required this.lastUpdate});
 
   factory _$FlashCardCategoryModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$FlashCardCategoryModelImplFromJson(json);
@@ -136,10 +186,16 @@ class _$FlashCardCategoryModelImpl implements _FlashCardCategoryModel {
   final String title;
   @override
   final String information;
+  @override
+  final bool isRecent;
+  @override
+  final int lastCardIndex;
+  @override
+  final DateTime lastUpdate;
 
   @override
   String toString() {
-    return 'FlashCardCategoryModel(id: $id, title: $title, information: $information)';
+    return 'FlashCardCategoryModel(id: $id, title: $title, information: $information, isRecent: $isRecent, lastCardIndex: $lastCardIndex, lastUpdate: $lastUpdate)';
   }
 
   @override
@@ -150,12 +206,19 @@ class _$FlashCardCategoryModelImpl implements _FlashCardCategoryModel {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.information, information) ||
-                other.information == information));
+                other.information == information) &&
+            (identical(other.isRecent, isRecent) ||
+                other.isRecent == isRecent) &&
+            (identical(other.lastCardIndex, lastCardIndex) ||
+                other.lastCardIndex == lastCardIndex) &&
+            (identical(other.lastUpdate, lastUpdate) ||
+                other.lastUpdate == lastUpdate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, information);
+  int get hashCode => Object.hash(
+      runtimeType, id, title, information, isRecent, lastCardIndex, lastUpdate);
 
   @JsonKey(ignore: true)
   @override
@@ -176,7 +239,10 @@ abstract class _FlashCardCategoryModel implements FlashCardCategoryModel {
   const factory _FlashCardCategoryModel(
       {required final String id,
       required final String title,
-      required final String information}) = _$FlashCardCategoryModelImpl;
+      required final String information,
+      required final bool isRecent,
+      required final int lastCardIndex,
+      required final DateTime lastUpdate}) = _$FlashCardCategoryModelImpl;
 
   factory _FlashCardCategoryModel.fromJson(Map<String, dynamic> json) =
       _$FlashCardCategoryModelImpl.fromJson;
@@ -187,6 +253,12 @@ abstract class _FlashCardCategoryModel implements FlashCardCategoryModel {
   String get title;
   @override
   String get information;
+  @override
+  bool get isRecent;
+  @override
+  int get lastCardIndex;
+  @override
+  DateTime get lastUpdate;
   @override
   @JsonKey(ignore: true)
   _$$FlashCardCategoryModelImplCopyWith<_$FlashCardCategoryModelImpl>

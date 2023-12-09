@@ -1776,3 +1776,1193 @@ final fakeFlashCards = [
     },
   ]
 ];
+
+final flashCardCategories504 = [
+  {
+    "id": 20,
+    "title": "English Essential Words",
+    "information": "Explore the essential words of English"
+  },
+];
+
+final flashCards504 = [
+  {"frontText": "abandon", "backText": "forsake; leave behind"},
+  {"frontText": "abide", "backText": "dwell"},
+  {"frontText": "abolish", "backText": "do away with"},
+  {"frontText": "abroad", "backText": "to or in a foreign country"},
+  {"frontText": "absorb", "backText": "take in a liquid"},
+  {
+    "frontText": "absurd",
+    "backText": "inconsistent with reason or logic or common sense"
+  },
+  {"frontText": "abundant", "backText": "present in great quantity"},
+  {"frontText": "abuse", "backText": "cruel or inhumane treatment"},
+  {
+    "frontText": "accurate",
+    "backText": "characterized by perfect conformity to fact or truth"
+  },
+  {
+    "frontText": "acknowledge",
+    "backText": "declare to be true or admit the existence or reality of"
+  },
+  {"frontText": "addict", "backText": "to cause to become dependent"},
+  {
+    "frontText": "adequate",
+    "backText": "having the requisite qualities or resources to meet a task"
+  },
+  {
+    "frontText": "adolescent",
+    "backText": "a person who is older than 12 but younger than 20"
+  },
+  {"frontText": "alter", "backText": "cause to change; make different"},
+  {
+    "frontText": "amateur",
+    "backText": "someone who pursues a study or sport as a pastime"
+  },
+  {
+    "frontText": "ambush",
+    "backText": "the act of hiding and waiting to make a surprise attack"
+  },
+  {"frontText": "annual", "backText": "occurring every year"},
+  {
+    "frontText": "anticipate",
+    "backText": "regard something as probable or likely"
+  },
+  {"frontText": "appeal", "backText": "earnest or urgent request"},
+  {
+    "frontText": "appoint",
+    "backText": "assign a duty, responsibility, or obligation to"
+  },
+  {"frontText": "approach", "backText": "move towards"},
+  {
+    "frontText": "appropriate",
+    "backText": "suitable for a particular person, place, or situation"
+  },
+  {
+    "frontText": "architect",
+    "backText": "someone who creates plans to be used in making something"
+  },
+  {
+    "frontText": "assemble",
+    "backText": "create by putting components or members together"
+  },
+  {"frontText": "attract", "backText": "exert a force on"},
+  {"frontText": "audible", "backText": "heard or perceptible by the ear"},
+  {
+    "frontText": "authority",
+    "backText": "the power or right to give orders or make decisions"
+  },
+  {"frontText": "avoid", "backText": "stay away from"},
+  {
+    "frontText": "aware",
+    "backText": "having or showing knowledge or understanding or realization"
+  },
+  {"frontText": "awesome", "backText": "inspiring admiration or wonder"},
+  {
+    "frontText": "awkward",
+    "backText": "lacking grace or skill in manner or movement or performance"
+  },
+  {"frontText": "bachelor", "backText": "a man who has never been married"},
+  {"frontText": "baffle", "backText": "be a mystery or bewildering to"},
+  {
+    "frontText": "baggage",
+    "backText": "cases used to carry belongings when traveling"
+  },
+  {
+    "frontText": "bait",
+    "backText": "something used to lure fish or other animals"
+  },
+  {
+    "frontText": "ban",
+    "backText": "prohibit especially by law or social pressure"
+  },
+  {
+    "frontText": "beckon",
+    "backText": "summon with a wave, nod, or some other gesture"
+  },
+  {
+    "frontText": "beneficiary",
+    "backText": "the recipient of funds or other advantages"
+  },
+  {"frontText": "betray", "backText": "deliver to an enemy by treachery"},
+  {
+    "frontText": "bewildered",
+    "backText": "extremely confused and uncertain what to do"
+  },
+  {
+    "frontText": "bigamy",
+    "backText": "the offense of marrying someone while you have a spouse"
+  },
+  {
+    "frontText": "biography",
+    "backText": "an account of the series of events making up a person's life"
+  },
+  {"frontText": "blunder", "backText": "an embarrassing mistake"},
+  {
+    "frontText": "brawl",
+    "backText": "quarrel or fight noisily, angrily or disruptively"
+  },
+  {
+    "frontText": "brutal",
+    "backText": "resembling a beast; showing lack of human sensibility"
+  },
+  {"frontText": "budget", "backText": "a summary of intended expenditures"},
+  {"frontText": "bulky", "backText": "of large size for its weight"},
+  {"frontText": "burden", "backText": "weight to be carried or borne"},
+  {
+    "frontText": "calamity",
+    "backText": "an event resulting in great loss and misfortune"
+  },
+  {"frontText": "calculate", "backText": "make a mathematical computation"},
+  {
+    "frontText": "campus",
+    "backText": "a field on which the buildings of a university are situated"
+  },
+  {"frontText": "cancel", "backText": "declare null and void"},
+  {
+    "frontText": "candidate",
+    "backText": "someone who is considered for something"
+  },
+  {"frontText": "capacity", "backText": "capability to perform or produce"},
+  {"frontText": "capsule", "backText": "a small container"},
+  {
+    "frontText": "captive",
+    "backText": "a person who is confined; especially a prisoner of war"
+  },
+  {
+    "frontText": "casual",
+    "backText": "without or seeming to be without plan or method; offhand"
+  },
+  {
+    "frontText": "caution",
+    "backText": "judiciousness in avoiding harm or danger"
+  },
+  {"frontText": "cease", "backText": "put an end to a state or an activity"},
+  {
+    "frontText": "censor",
+    "backText": "a person authorized to suppress unacceptable material"
+  },
+  {"frontText": "century", "backText": "a period of 100 years"},
+  {
+    "frontText": "challenge",
+    "backText": "a call to engage in a contest or fight"
+  },
+  {
+    "frontText": "charity",
+    "backText": "an institution set up to provide help to the needy"
+  },
+  {
+    "frontText": "chiropractor",
+    "backText": "a therapist who manipulates the body to ease pain"
+  },
+  {
+    "frontText": "cinema",
+    "backText": "a medium that disseminates moving pictures"
+  },
+  {
+    "frontText": "circulate",
+    "backText": "move through a system and return to the starting point"
+  },
+  {
+    "frontText": "clergy",
+    "backText": "the entire class of religious officials"
+  },
+  {"frontText": "client", "backText": "someone who pays for goods or services"},
+  {
+    "frontText": "coeducational",
+    "backText": "attended by members of both sexes"
+  },
+  {"frontText": "coincide", "backText": "happen simultaneously"},
+  {
+    "frontText": "collapse",
+    "backText": "break down, literally or metaphorically"
+  },
+  {"frontText": "colleague", "backText": "an associate that one works with"},
+  {"frontText": "collide", "backText": "crash together with violent impact"},
+  {"frontText": "commence", "backText": "set in motion, cause to start"},
+  {
+    "frontText": "commend",
+    "backText": "present as worthy of regard, kindness, or confidence"
+  },
+  {
+    "frontText": "commuter",
+    "backText": "someone who travels regularly to and from work"
+  },
+  {"frontText": "compel", "backText": "force somebody to do something"},
+  {
+    "frontText": "compete",
+    "backText": "engage in a contest or measure oneself against others"
+  },
+  {
+    "frontText": "complacent",
+    "backText": "contented to a fault with oneself or one's actions"
+  },
+  {"frontText": "comprehend", "backText": "get the meaning of something"},
+  {"frontText": "comprehensive", "backText": "including all or everything"},
+  {"frontText": "conceal", "backText": "prevent from being seen or discovered"},
+  {"frontText": "conclude", "backText": "bring to a close"},
+  {"frontText": "confident", "backText": "having or marked by assurance"},
+  {"frontText": "confine", "backText": "place limits on"},
+  {"frontText": "confirm", "backText": "strengthen"},
+  {
+    "frontText": "conflict",
+    "backText": "an open clash between two opposing groups"
+  },
+  {"frontText": "consider", "backText": "think about carefully; weigh"},
+  {
+    "frontText": "contagious",
+    "backText": "(of disease) capable of being spread by infection"
+  },
+  {"frontText": "corpse", "backText": "the dead body of a human being"},
+  {"frontText": "crafty", "backText": "marked by skill in deception"},
+  {
+    "frontText": "culprit",
+    "backText": "someone or something responsible for harm or wrongdoing"
+  },
+  {"frontText": "customary", "backText": "commonly used or practiced"},
+  {
+    "frontText": "data",
+    "backText": "a collection of facts from which conclusions may be drawn"
+  },
+  {
+    "frontText": "daze",
+    "backText": "confusion characterized by lack of clarity"
+  },
+  {
+    "frontText": "debate",
+    "backText": "a discussion with reasons for and against some proposal"
+  },
+  {"frontText": "debtor", "backText": "a person who owes a creditor"},
+  {"frontText": "decade", "backText": "a period of 10 years"},
+  {"frontText": "deceive", "backText": "cause someone to believe an untruth"},
+  {"frontText": "decrease", "backText": "a change downward"},
+  {"frontText": "defect", "backText": "a failing or deficiency"},
+  {
+    "frontText": "defiant",
+    "backText": "boldly resisting authority or an opposing force"
+  },
+  {"frontText": "defraud", "backText": "(offensive) deprive of by deceit"},
+  {"frontText": "dejected", "backText": "affected or marked by low spirits"},
+  {"frontText": "deliberate", "backText": "carefully thought out in advance"},
+  {"frontText": "delinquent", "backText": "a young offender"},
+  {"frontText": "denounce", "backText": "speak out against"},
+  {"frontText": "dense", "backText": "having high compaction or concentration"},
+  {"frontText": "depart", "backText": "go away or leave"},
+  {"frontText": "depict", "backText": "give a description of"},
+  {"frontText": "deprive", "backText": "take away"},
+  {
+    "frontText": "descend",
+    "backText": "move downward and lower, but not necessarily all the way"
+  },
+  {"frontText": "despite", "backText": "contemptuous disregard"},
+  {
+    "frontText": "detect",
+    "backText": "discover or determine the existence, presence, or fact of"
+  },
+  {"frontText": "detest", "backText": "dislike intensely"},
+  {"frontText": "detour", "backText": "a roundabout road or route"},
+  {
+    "frontText": "devise",
+    "backText": "arrange by systematic planning and united effort"
+  },
+  {"frontText": "devour", "backText": "eat immoderately"},
+  {
+    "frontText": "dilemma",
+    "backText": "state of uncertainty in a choice between unfavorable options"
+  },
+  {"frontText": "diminish", "backText": "decrease in size, extent, or range"},
+  {
+    "frontText": "disaster",
+    "backText": "an event resulting in great loss and misfortune"
+  },
+  {"frontText": "discard", "backText": "anything that is cast aside"},
+  {
+    "frontText": "disclose",
+    "backText": "expose to view as by removing a cover"
+  },
+  {"frontText": "dismal", "backText": "causing dejection"},
+  {"frontText": "dispute", "backText": "the act of coming into conflict"},
+  {"frontText": "disrupt", "backText": "make a break in"},
+  {"frontText": "distress", "backText": "a state of adversity"},
+  {
+    "frontText": "document",
+    "backText": "a representation of a person's thinking with symbolic marks"
+  },
+  {"frontText": "doubt", "backText": "the state of being unsure of something"},
+  {"frontText": "dread", "backText": "fearful expectation or anticipation"},
+  {"frontText": "drench", "backText": "cover with liquid; pour liquid onto"},
+  {"frontText": "drought", "backText": "a shortage of rainfall"},
+  {
+    "frontText": "duplicate",
+    "backText": "a copy that corresponds to an original exactly"
+  },
+  {"frontText": "dwindle", "backText": "become smaller or lose substance"},
+  {
+    "frontText": "economical",
+    "backText": "using the minimum of time or resources for effectiveness"
+  },
+  {
+    "frontText": "editor",
+    "backText": "the person who determines the final content of a text"
+  },
+  {
+    "frontText": "elevate",
+    "backText": "raise from a lower to a higher position"
+  },
+  {"frontText": "eliminate", "backText": "end, take out, or do away with"},
+  {
+    "frontText": "embrace",
+    "backText": "squeeze tightly in your arms, usually with fondness"
+  },
+  {
+    "frontText": "emerge",
+    "backText": "come out into view, as from concealment"
+  },
+  {"frontText": "encourage", "backText": "inspire with confidence"},
+  {"frontText": "endure", "backText": "undergo or be subjected to"},
+  {
+    "frontText": "enormous",
+    "backText": "extraordinarily large in size or extent or degree"
+  },
+  {
+    "frontText": "envy",
+    "backText": "a desire to have something that is possessed by another"
+  },
+  {
+    "frontText": "epidemic",
+    "backText": "a widespread outbreak of an infectious disease"
+  },
+  {"frontText": "essential", "backText": "basic and fundamental"},
+  {"frontText": "estimate", "backText": "judge tentatively"},
+  {
+    "frontText": "evade",
+    "backText": "avoid or try to avoid fulfilling, answering, or performing"
+  },
+  {
+    "frontText": "event",
+    "backText": "something that happens at a given place and time"
+  },
+  {"frontText": "evidence", "backText": "knowledge on which to base belief"},
+  {"frontText": "exaggerate", "backText": "enlarge beyond bounds or the truth"},
+  {"frontText": "excel", "backText": "distinguish oneself"},
+  {"frontText": "excessive", "backText": "beyond normal limits"},
+  {
+    "frontText": "exempt",
+    "backText": "freed from or not subject to an obligation or liability"
+  },
+  {"frontText": "exhaust", "backText": "wear out completely"},
+  {"frontText": "exhibit", "backText": "show; make visible or apparent"},
+  {"frontText": "expand", "backText": "extend in one or more directions"},
+  {
+    "frontText": "expensive",
+    "backText": "high in price or charging high prices"
+  },
+  {"frontText": "explore", "backText": "travel to or penetrate into"},
+  {"frontText": "expose", "backText": "show; make visible or apparent"},
+  {
+    "frontText": "extract",
+    "backText": "remove, usually with some force or effort"
+  },
+  {
+    "frontText": "famine",
+    "backText": "a severe shortage of food resulting in starvation and death"
+  },
+  {
+    "frontText": "feeble",
+    "backText": "pathetically lacking in force or effectiveness"
+  },
+  {
+    "frontText": "feminine",
+    "backText": "associated with women and not with men"
+  },
+  {"frontText": "fertile", "backText": "capable of reproducing"},
+  {
+    "frontText": "fiction",
+    "backText": "a literary work based on the imagination"
+  },
+  {"frontText": "fierce", "backText": "marked by extreme and violent energy"},
+  {
+    "frontText": "final",
+    "backText": "an exam administered at the end of an academic term"
+  },
+  {
+    "frontText": "finance",
+    "backText": "the commercial activity of providing funds and capital"
+  },
+  {"frontText": "flee", "backText": "run away quickly"},
+  {"frontText": "flexible", "backText": "able to bend easily"},
+  {"frontText": "forbid", "backText": "command against"},
+  {"frontText": "fortunate", "backText": "having unexpected good luck"},
+  {"frontText": "fragile", "backText": "easily broken or damaged or destroyed"},
+  {
+    "frontText": "frank",
+    "backText": "characterized by directness in manner or speech"
+  },
+  {
+    "frontText": "frequent",
+    "backText": "coming at short intervals or habitually"
+  },
+  {"frontText": "frigid", "backText": "extremely cold"},
+  {
+    "frontText": "fugitive",
+    "backText": "someone who is sought by law officers"
+  },
+  {
+    "frontText": "gallant",
+    "backText": "having or displaying great dignity or nobility"
+  },
+  {"frontText": "glance", "backText": "take a brief look at"},
+  {"frontText": "gleam", "backText": "a flash of light"},
+  {"frontText": "glimpse", "backText": "a brief or incomplete view"},
+  {"frontText": "gloomy", "backText": "depressingly dark"},
+  {"frontText": "grateful", "backText": "feeling or showing thankfulness"},
+  {"frontText": "guide", "backText": "someone employed to conduct others"},
+  {"frontText": "harmony", "backText": "compatibility in opinion and action"},
+  {"frontText": "harsh", "backText": "disagreeable to the senses"},
+  {"frontText": "harvest", "backText": "the gathering of a ripened crop"},
+  {"frontText": "hasty", "backText": "excessively quick"},
+  {"frontText": "hazy", "backText": "filled or abounding with fog or mist"},
+  {"frontText": "heed", "backText": "careful attention"},
+  {
+    "frontText": "heir",
+    "backText": "a person entitled by law to inherit the estate of another"
+  },
+  {
+    "frontText": "hesitate",
+    "backText": "pause or hold back in uncertainty or unwillingness"
+  },
+  {"frontText": "hinder", "backText": "be an obstacle to"},
+  {
+    "frontText": "homicide",
+    "backText": "the killing of a human being by another human being"
+  },
+  {
+    "frontText": "horrid",
+    "backText": "grossly offensive to decency or morality"
+  },
+  {
+    "frontText": "humid",
+    "backText": "containing or characterized by a great deal of water vapor"
+  },
+  {"frontText": "identify", "backText": "recognize as being"},
+  {"frontText": "idle", "backText": "not in action or at work"},
+  {"frontText": "idol", "backText": "a material effigy that is worshipped"},
+  {"frontText": "ignite", "backText": "cause to start burning"},
+  {"frontText": "ignore", "backText": "refuse to acknowledge"},
+  {
+    "frontText": "illegal",
+    "backText": "prohibited by law or by official or accepted rules"
+  },
+  {
+    "frontText": "illustrate",
+    "backText": "depict with a visual representation"
+  },
+  {
+    "frontText": "indifference",
+    "backText": "the trait of remaining calm and seeming not to care"
+  },
+  {"frontText": "ingenious", "backText": "showing inventiveness and skill"},
+  {"frontText": "inhabit", "backText": "live in; be a resident of"},
+  {
+    "frontText": "innovative",
+    "backText": "introducing new ideas or creative methods"
+  },
+  {
+    "frontText": "insist",
+    "backText": "be emphatic or resolute and refuse to budge"
+  },
+  {
+    "frontText": "jagged",
+    "backText": "having a sharply uneven surface or outline"
+  },
+  {
+    "frontText": "jealous",
+    "backText": "suspicious or fearful of being displaced by a rival"
+  },
+  {
+    "frontText": "jeopardize",
+    "backText": "pose a threat to; present a danger to"
+  },
+  {"frontText": "jest", "backText": "activity characterized by good humor"},
+  {
+    "frontText": "jolly",
+    "backText": "full of or showing high-spirited merriment"
+  },
+  {
+    "frontText": "journalist",
+    "backText": "a person who writes or broadcasts news stories"
+  },
+  {
+    "frontText": "justice",
+    "backText": "the quality of being fair, reasonable, or impartial"
+  },
+  {
+    "frontText": "juvenile",
+    "backText": "of or relating to children or young people"
+  },
+  {"frontText": "keen", "backText": "intense or sharp"},
+  {"frontText": "keg", "backText": "small cask or barrel"},
+  {"frontText": "kneel", "backText": "rest one's weight on one's knees"},
+  {
+    "frontText": "lack",
+    "backText": "the state of needing something that is absent or unavailable"
+  },
+  {"frontText": "lecture", "backText": "a speech that is open to the public"},
+  {
+    "frontText": "legend",
+    "backText": "a story about mythical or supernatural beings or events"
+  },
+  {"frontText": "legible", "backText": "capable of being read or deciphered"},
+  {
+    "frontText": "linger",
+    "backText": "remain present although waning or gradually dying"
+  },
+  {
+    "frontText": "logical",
+    "backText": "based on known statements or events or conditions"
+  },
+  {
+    "frontText": "lottery",
+    "backText": "a game in which players buy chances to win"
+  },
+  {
+    "frontText": "loyalty",
+    "backText": "the quality of being steadfast in allegiance or duty"
+  },
+  {"frontText": "lubricate", "backText": "make slippery or smooth"},
+  {"frontText": "lunatic", "backText": "an insane person"},
+  {
+    "frontText": "magnify",
+    "backText": "increase in size, volume or significance"
+  },
+  {
+    "frontText": "maim",
+    "backText": "injure or wound seriously and leave permanent disfiguration"
+  },
+  {
+    "frontText": "maintain",
+    "backText": "keep in a certain state, position, or activity"
+  },
+  {
+    "frontText": "majestic",
+    "backText": "having or displaying great dignity or nobility"
+  },
+  {"frontText": "majority", "backText": "the main part"},
+  {
+    "frontText": "manipulate",
+    "backText": "influence or control shrewdly or deviously"
+  },
+  {
+    "frontText": "masculine",
+    "backText": "associated with men and not with women"
+  },
+  {
+    "frontText": "matrimony",
+    "backText": "state of being a married couple voluntarily joined for life"
+  },
+  {
+    "frontText": "mature",
+    "backText": "having reached full natural growth or development"
+  },
+  {
+    "frontText": "maximum",
+    "backText": "the greatest or most complete or best possible"
+  },
+  {"frontText": "mediocre", "backText": "moderate to inferior in quality"},
+  {"frontText": "menace", "backText": "something that is a source of danger"},
+  {"frontText": "merit", "backText": "the quality of being deserving"},
+  {
+    "frontText": "microscope",
+    "backText": "magnifier of the image of small objects"
+  },
+  {
+    "frontText": "migrate",
+    "backText": "move from one country or region to another and settle there"
+  },
+  {"frontText": "miniature", "backText": "being on a very small scale"},
+  {"frontText": "minimum", "backText": "the smallest possible quantity"},
+  {
+    "frontText": "minority",
+    "backText": "being or relating to the smaller in number of two parts"
+  },
+  {
+    "frontText": "miserly",
+    "backText": "characterized by or indicative of lack of generosity"
+  },
+  {
+    "frontText": "misfortune",
+    "backText": "a state resulting from unfavorable outcomes"
+  },
+  {
+    "frontText": "molest",
+    "backText": "harass or assault sexually; make indecent advances to"
+  },
+  {
+    "frontText": "monarch",
+    "backText": "a nation's ruler usually by hereditary right"
+  },
+  {
+    "frontText": "morality",
+    "backText": "the quality of being in accord with right or good conduct"
+  },
+  {
+    "frontText": "morgue",
+    "backText": "a building or room where dead bodies are kept before burial"
+  },
+  {
+    "frontText": "morsel",
+    "backText": "a small amount of solid food; a mouthful"
+  },
+  {"frontText": "mortal", "backText": "subject to death"},
+  {"frontText": "mount", "backText": "go up, advance, or increase"},
+  {"frontText": "mourn", "backText": "feel sadness"},
+  {"frontText": "multitude", "backText": "a large indefinite number"},
+  {
+    "frontText": "mumble",
+    "backText": "talk indistinctly; usually in a low voice"
+  },
+  {
+    "frontText": "municipal",
+    "backText": "relating to a self-governing district"
+  },
+  {"frontText": "mute", "backText": "expressed without speech"},
+  {
+    "frontText": "mythology",
+    "backText": "the body of stories associated with a culture or institution"
+  },
+  {
+    "frontText": "narcotic",
+    "backText": "a drug that produces numbness or stupor"
+  },
+  {
+    "frontText": "negative",
+    "backText": "characterized by denial or opposition or resistance"
+  },
+  {"frontText": "neglect", "backText": "leave undone or leave out"},
+  {"frontText": "neutral", "backText": "having no personal preference"},
+  {"frontText": "nimble", "backText": "moving quickly and lightly"},
+  {
+    "frontText": "nominate",
+    "backText": "propose as a candidate for some honor"
+  },
+  {"frontText": "nourish", "backText": "provide with sustenance"},
+  {"frontText": "novel", "backText": "an extended fictional work in prose"},
+  {"frontText": "numb", "backText": "lacking sensation"},
+  {
+    "frontText": "numerous",
+    "backText": "amounting to a large indefinite number"
+  },
+  {
+    "frontText": "oath",
+    "backText": "a solemn promise regarding your future acts or behavior"
+  },
+  {
+    "frontText": "obedient",
+    "backText": "dutifully complying with the commands of those in authority"
+  },
+  {
+    "frontText": "obesity",
+    "backText": "the condition of being excessively overweight"
+  },
+  {
+    "frontText": "observant",
+    "backText": "quick to notice; showing quick and keen perception"
+  },
+  {
+    "frontText": "obstacle",
+    "backText": "something that stands in the way and must be surmounted"
+  },
+  {"frontText": "obtain", "backText": "come into possession of"},
+  {
+    "frontText": "obvious",
+    "backText": "easily perceived by the senses or grasped by the mind"
+  },
+  {
+    "frontText": "occupant",
+    "backText": "someone who lives at a particular place for a long period"
+  },
+  {"frontText": "opt", "backText": "select as an alternative over another"},
+  {"frontText": "oral", "backText": "using speech rather than writing"},
+  {
+    "frontText": "outlaw",
+    "backText": "a criminal, especially one on the run from police"
+  },
+  {
+    "frontText": "pacify",
+    "backText": "ease the anger, agitation, or strong emotion of"
+  },
+  {
+    "frontText": "panic",
+    "backText": "an overwhelming feeling of fear and anxiety"
+  },
+  {
+    "frontText": "parole",
+    "backText": "a conditional release from imprisonment"
+  },
+  {"frontText": "partial", "backText": "being or affecting only a segment"},
+  {"frontText": "patriotic", "backText": "inspired by love for your country"},
+  {"frontText": "pauper", "backText": "a person who is very poor"},
+  {"frontText": "pedestrian", "backText": "a person who travels by foot"},
+  {"frontText": "penalize", "backText": "inflict punishment on"},
+  {
+    "frontText": "penetrate",
+    "backText": "pass into or through, often by overcoming resistance"
+  },
+  {
+    "frontText": "pension",
+    "backText": "regular payment to allow a person to subsist without working"
+  },
+  {"frontText": "peril", "backText": "a state of danger involving risk"},
+  {"frontText": "perish", "backText": "pass from physical life"},
+  {"frontText": "persist", "backText": "refuse to stop"},
+  {
+    "frontText": "persuade",
+    "backText": "cause somebody to adopt a certain position or belief"
+  },
+  {
+    "frontText": "pierce",
+    "backText": "penetrate or cut through with a sharp instrument"
+  },
+  {
+    "frontText": "pioneer",
+    "backText": "one the first colonists or settlers in a new territory"
+  },
+  {"frontText": "placard", "backText": "a sign posted in a public place"},
+  {
+    "frontText": "plea",
+    "backText": "a humble request for help from someone in authority"
+  },
+  {
+    "frontText": "pledge",
+    "backText": "a binding commitment to do or give or refrain from something"
+  },
+  {"frontText": "pollute", "backText": "contaminate; make impure"},
+  {"frontText": "ponder", "backText": "reflect deeply on a subject"},
+  {
+    "frontText": "popular",
+    "backText": "regarded with great favor or approval by the general public"
+  },
+  {
+    "frontText": "population",
+    "backText": "the people who inhabit a territory or state"
+  },
+  {"frontText": "possible", "backText": "capable of happening or existing"},
+  {"frontText": "postpone", "backText": "hold back to a later time"},
+  {"frontText": "potential", "backText": "existing in possibility"},
+  {
+    "frontText": "precaution",
+    "backText": "a measure taken in advance to ward off impending danger"
+  },
+  {"frontText": "precede", "backText": "be earlier in time"},
+  {
+    "frontText": "predict",
+    "backText": "make a guess about what will happen in the future"
+  },
+  {
+    "frontText": "prejudice",
+    "backText": "a partiality preventing objective consideration of an issue"
+  },
+  {
+    "frontText": "preoccupied",
+    "backText": "having excessive or compulsive concern with something"
+  },
+  {
+    "frontText": "preserve",
+    "backText": "keep in safety and protect from harm, loss, or destruction"
+  },
+  {"frontText": "prior", "backText": "earlier in time"},
+  {"frontText": "probe", "backText": "an exploratory action or expedition"},
+  {
+    "frontText": "proceed",
+    "backText": "move ahead; travel onward in time or space"
+  },
+  {"frontText": "prohibit", "backText": "command against"},
+  {
+    "frontText": "prominent",
+    "backText": "conspicuous in position or importance"
+  },
+  {"frontText": "promote", "backText": "assign to a higher position"},
+  {"frontText": "prompt", "backText": "according to schedule or without delay"},
+  {
+    "frontText": "prosecute",
+    "backText": "conduct legal proceedings against a defendant"
+  },
+  {"frontText": "prosper", "backText": "make steady progress"},
+  {"frontText": "provide", "backText": "give something useful or necessary to"},
+  {"frontText": "pursue", "backText": "follow in an effort to capture"},
+  {
+    "frontText": "qualify",
+    "backText": "prove capable or fit; meet requirements"
+  },
+  {
+    "frontText": "quantity",
+    "backText": "how much there is or how many there are of something"
+  },
+  {"frontText": "quarter", "backText": "one of four equal parts"},
+  {"frontText": "quench", "backText": "satisfy, as thirst"},
+  {"frontText": "quota", "backText": "a prescribed number"},
+  {"frontText": "quote", "backText": "repeat a passage from"},
+  {"frontText": "radical", "backText": "far beyond the norm"},
+  {"frontText": "rage", "backText": "a feeling of intense anger"},
+  {"frontText": "rapid", "backText": "characterized by speed"},
+  {"frontText": "rash", "backText": "imprudently incurring risk"},
+  {
+    "frontText": "rave",
+    "backText": "talk in a noisy, excited, or declamatory manner"
+  },
+  {"frontText": "recede", "backText": "pull back or move away or backward"},
+  {
+    "frontText": "recent",
+    "backText": "of the immediate past or just previous to the present time"
+  },
+  {
+    "frontText": "reckless",
+    "backText": "marked by defiant disregard for danger or consequences"
+  },
+  {
+    "frontText": "recline",
+    "backText": "move the upper body backwards and down"
+  },
+  {
+    "frontText": "redeem",
+    "backText": "exchange or buy back for money; under threat"
+  },
+  {"frontText": "refer", "backText": "make a remark that calls attention to"},
+  {
+    "frontText": "reform",
+    "backText": "make changes for improvement to remove abuse and injustices"
+  },
+  {"frontText": "refrain", "backText": "resist doing something"},
+  {
+    "frontText": "rehabilitate",
+    "backText": "restore someone to a good state of health or reputation"
+  },
+  {"frontText": "reject", "backText": "refuse to accept or acknowledge"},
+  {
+    "frontText": "related",
+    "backText": "connected logically or causally or by shared characteristics"
+  },
+  {"frontText": "relieve", "backText": "free from a burden, evil, or distress"},
+  {"frontText": "reluctant", "backText": "not eager"},
+  {
+    "frontText": "repetition",
+    "backText": "the act of doing or performing again"
+  },
+  {
+    "frontText": "reptile",
+    "backText": "a cold-blooded vertebrate including snakes and lizards"
+  },
+  {"frontText": "resent", "backText": "feel bitter or indignant about"},
+  {"frontText": "resign", "backText": "accept as inevitable"},
+  {"frontText": "resist", "backText": "withstand the force of something"},
+  {"frontText": "respond", "backText": "show a reaction to something"},
+  {"frontText": "resume", "backText": "take up or begin anew"},
+  {
+    "frontText": "retain",
+    "backText": "secure and keep for possible future use or application"
+  },
+  {"frontText": "reveal", "backText": "make visible"},
+  {"frontText": "revise", "backText": "make changes to"},
+  {"frontText": "revive", "backText": "cause to regain consciousness"},
+  {"frontText": "rival", "backText": "the contestant you hope to defeat"},
+  {
+    "frontText": "roam",
+    "backText": "move about aimlessly or without any destination"
+  },
+  {
+    "frontText": "rural",
+    "backText": "living in or characteristic of farming or country life"
+  },
+  {"frontText": "sacred", "backText": "made, declared, or believed to be holy"},
+  {"frontText": "scald", "backText": "burn with a hot liquid or steam"},
+  {
+    "frontText": "scarce",
+    "backText": "deficient in quantity or number compared with the demand"
+  },
+  {
+    "frontText": "scorch",
+    "backText": "burn slightly and superficially so as to affect color"
+  },
+  {"frontText": "scowl", "backText": "frown with displeasure"},
+  {
+    "frontText": "security",
+    "backText": "the state of being free from danger or injury"
+  },
+  {"frontText": "sensitive", "backText": "responsive to physical stimuli"},
+  {"frontText": "severity", "backText": "excessive sternness"},
+  {"frontText": "shriek", "backText": "sharp piercing cry"},
+  {
+    "frontText": "shrill",
+    "backText": "having or emitting a high-pitched and sharp tone or tones"
+  },
+  {"frontText": "signify", "backText": "denote or connote"},
+  {"frontText": "sinister", "backText": "wicked, evil, or dishonorable"},
+  {
+    "frontText": "site",
+    "backText": "the piece of land on which something is located"
+  },
+  {"frontText": "skim", "backText": "remove from the surface"},
+  {
+    "frontText": "slender",
+    "backText": "having little width in proportion to the length or height"
+  },
+  {
+    "frontText": "sneer",
+    "backText": "a facial expression of contempt or scorn"
+  },
+  {"frontText": "soar", "backText": "rise rapidly"},
+  {
+    "frontText": "solitary",
+    "backText": "not growing or living in groups or colonies"
+  },
+  {"frontText": "soothe", "backText": "cause to feel better"},
+  {"frontText": "source", "backText": "the place where something begins"},
+  {
+    "frontText": "spontaneous",
+    "backText": "said or done without having been planned in advance"
+  },
+  {"frontText": "spouse", "backText": "a person's partner in marriage"},
+  {"frontText": "squander", "backText": "spend thoughtlessly; throw away"},
+  {"frontText": "stationary", "backText": "not capable of being moved"},
+  {"frontText": "subsequent", "backText": "following in time or order"},
+  {"frontText": "subside", "backText": "wear off or die down"},
+  {"frontText": "summit", "backText": "the top or extreme point of something"},
+  {
+    "frontText": "surpass",
+    "backText": "be or do something to a greater degree"
+  },
+  {"frontText": "surplus", "backText": "a quantity much larger than is needed"},
+  {"frontText": "survive", "backText": "continue in existence after"},
+  {
+    "frontText": "swarm",
+    "backText": "a group of many things in the air or on the ground"
+  },
+  {
+    "frontText": "symbol",
+    "backText": "something visible that represents something invisible"
+  },
+  {
+    "frontText": "sympathetic",
+    "backText": "expressing compassion or friendly fellow feelings"
+  },
+  {"frontText": "tact", "backText": "consideration in dealing with others"},
+  {"frontText": "talent", "backText": "natural abilities or qualities"},
+  {"frontText": "temperate", "backText": "not extreme"},
+  {"frontText": "tempest", "backText": "a violent commotion or disturbance"},
+  {"frontText": "tempt", "backText": "dispose, incline, or entice to"},
+  {"frontText": "tendency", "backText": "an inclination to do something"},
+  {"frontText": "theory", "backText": "a belief that can guide behavior"},
+  {"frontText": "thorough", "backText": "painstakingly careful and accurate"},
+  {
+    "frontText": "threat",
+    "backText": "declaration of an intention to inflict harm on another"
+  },
+  {
+    "frontText": "thrifty",
+    "backText": "mindful of the future in spending money"
+  },
+  {"frontText": "thrust", "backText": "push forcefully"},
+  {"frontText": "toil", "backText": "work hard"},
+  {
+    "frontText": "topic",
+    "backText": "the subject matter of a conversation or discussion"
+  },
+  {
+    "frontText": "torment",
+    "backText": "intense feelings of suffering; acute mental or physical pain"
+  },
+  {"frontText": "torrent", "backText": "an overwhelming number or amount"},
+  {
+    "frontText": "tradition",
+    "backText": "a specific practice of long standing"
+  },
+  {
+    "frontText": "tragedy",
+    "backText": "an event resulting in great loss and misfortune"
+  },
+  {
+    "frontText": "traitor",
+    "backText": "a person who says one thing and does another"
+  },
+  {
+    "frontText": "transmit",
+    "backText": "send from one person or place to another"
+  },
+  {
+    "frontText": "transparent",
+    "backText": "able to be seen through with clarity"
+  },
+  {
+    "frontText": "trifle",
+    "backText": "a detail that is considered insignificant"
+  },
+  {
+    "frontText": "tumult",
+    "backText": "a state of commotion and noise and confusion"
+  },
+  {
+    "frontText": "typical",
+    "backText": "exhibiting the qualities that identify a group or kind"
+  },
+  {"frontText": "tyrant", "backText": "a cruel and oppressive dictator"},
+  {
+    "frontText": "unaccustomed",
+    "backText": "not habituated to; unfamiliar with"
+  },
+  {"frontText": "unanimous", "backText": "in complete agreement"},
+  {"frontText": "undeniable", "backText": "not possible to contradict"},
+  {
+    "frontText": "underdog",
+    "backText": "one who is at a disadvantage and expected to lose"
+  },
+  {
+    "frontText": "underestimate",
+    "backText": "make too low an approximation of"
+  },
+  {"frontText": "undernourished", "backText": "not getting adequate food"},
+  {"frontText": "undoubtedly", "backText": "certainly"},
+  {"frontText": "unearth", "backText": "recover through digging"},
+  {
+    "frontText": "uneasy",
+    "backText": "causing or fraught with or showing anxiety"
+  },
+  {
+    "frontText": "uneventful",
+    "backText": "marked by no noteworthy or significant events"
+  },
+  {"frontText": "unforeseen", "backText": "not anticipated"},
+  {"frontText": "unify", "backText": "join or combine"},
+  {"frontText": "unite", "backText": "join or combine"},
+  {"frontText": "unruly", "backText": "unable to be governed or controlled"},
+  {"frontText": "unstable", "backText": "subject to change; variable"},
+  {"frontText": "untidy", "backText": "not neat and tidy"},
+  {"frontText": "upholstery", "backText": "covering on a piece of furniture"},
+  {
+    "frontText": "urban",
+    "backText": "relating to a city or densely populated area"
+  },
+  {"frontText": "urgent", "backText": "compelling immediate action"},
+  {"frontText": "utensil", "backText": "an implement for practical use"},
+  {"frontText": "utilize", "backText": "put into service"},
+  {"frontText": "utter", "backText": "without qualification"},
+  {
+    "frontText": "vacant",
+    "backText": "not containing anyone or anything; unfilled or unoccupied"
+  },
+  {"frontText": "vaccinate", "backText": "produce immunity in by inoculation"},
+  {"frontText": "vague", "backText": "lacking clarity or distinctness"},
+  {
+    "frontText": "vain",
+    "backText": "having an exaggerated sense of self-importance"
+  },
+  {"frontText": "valiant", "backText": "having or showing heroism or courage"},
+  {
+    "frontText": "valid",
+    "backText": "well grounded in logic or truth or having legal force"
+  },
+  {"frontText": "valor", "backText": "courage when facing danger"},
+  {
+    "frontText": "vandal",
+    "backText": "someone who willfully destroys or defaces property"
+  },
+  {"frontText": "vanish", "backText": "become invisible or unnoticeable"},
+  {
+    "frontText": "vapor",
+    "backText": "a visible suspension in the air of particles of a substance"
+  },
+  {
+    "frontText": "variety",
+    "backText": "a category of things distinguished by a common quality"
+  },
+  {
+    "frontText": "vast",
+    "backText": "unusually great in size or amount or extent or scope"
+  },
+  {
+    "frontText": "vein",
+    "backText": "a blood vessel that carries blood toward the heart"
+  },
+  {
+    "frontText": "ventilate",
+    "backText": "furnish with an opening to allow air to circulate or escape"
+  },
+  {
+    "frontText": "venture",
+    "backText": "an undertaking with an uncertain outcome"
+  },
+  {
+    "frontText": "verdict",
+    "backText": "findings of a jury on issues submitted to it for decision"
+  },
+  {"frontText": "verify", "backText": "confirm the truth of"},
+  {
+    "frontText": "vermin",
+    "backText": "any of various small animals or insects that are pests"
+  },
+  {"frontText": "verse", "backText": "literature in metrical form"},
+  {
+    "frontText": "vertical",
+    "backText": "at right angles to the plane of the horizon or a base line"
+  },
+  {
+    "frontText": "vessel",
+    "backText": "an object used as a container, especially for liquids"
+  },
+  {"frontText": "vicinity", "backText": "a surrounding or nearby region"},
+  {"frontText": "vicious", "backText": "having the nature of evildoing"},
+  {"frontText": "victorious", "backText": "having won"},
+  {"frontText": "vigor", "backText": "forceful exertion"},
+  {"frontText": "villain", "backText": "someone who does evil deliberately"},
+  {
+    "frontText": "violent",
+    "backText": "acting with great force or energy or emotional intensity"
+  },
+  {
+    "frontText": "visible",
+    "backText": "capable of being seen or open to easy view"
+  },
+  {"frontText": "vision", "backText": "the ability to see"},
+  {
+    "frontText": "vital",
+    "backText": "performing an essential function in the living body"
+  },
+  {
+    "frontText": "vocation",
+    "backText": "the particular occupation for which you are trained"
+  },
+  {
+    "frontText": "volunteer",
+    "backText": "a person who performs work done by choice"
+  },
+  {"frontText": "vulnerable", "backText": "capable of being wounded or hurt"},
+  {"frontText": "wad", "backText": "a small mass of soft material"},
+  {"frontText": "wager", "backText": "the act of gambling"},
+  {
+    "frontText": "warden",
+    "backText": "the chief official in charge of a prison"
+  },
+  {
+    "frontText": "wary",
+    "backText": "marked by keen caution and watchful prudence"
+  },
+  {
+    "frontText": "wasp",
+    "backText":
+        "social or solitary hymenopterans typically having a slender body with the abdomen attached by a narrow stalk and having a formidable sting"
+  },
+  {"frontText": "weary", "backText": "physically and mentally fatigued"},
+  {"frontText": "weird", "backText": "strikingly odd or unusual"},
+  {
+    "frontText": "whirling",
+    "backText": "the act of rotating in a circle or spiral"
+  },
+  {"frontText": "wholesale", "backText": "the selling of goods to merchants"},
+  {
+    "frontText": "witty",
+    "backText": "demonstrating striking cleverness and humor"
+  },
+  {"frontText": "wobble", "backText": "move sideways or in an unsteady way"},
+  {"frontText": "wrath", "backText": "intense anger"},
+  {"frontText": "wretched", "backText": "deserving or inciting pity"},
+  {"frontText": "skim", "backText": "remove from the surface"}
+];

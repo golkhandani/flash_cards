@@ -36,6 +36,12 @@ extension UiBreakPointDetection on BuildContext {
   Color get randomColor => Color((Random().nextDouble() * 0xFFFF).toInt())
       .withOpacity(1.0)
       .withAlpha(255);
+
+  double get fixedContentHeight =>
+      MediaQuery.of(this).size.height -
+      120 -
+      MediaQuery.paddingOf(this).top -
+      MediaQuery.paddingOf(this).bottom;
 }
 
 extension UiConstantsExtention on BuildContext {

@@ -19,7 +19,8 @@ mixin FlashCardCategoriesLogicMixin {
     currentState = currentState.copyWith(isLoading: true);
     final isar = getIt.get<Isar>();
     final categoriesCollection = isar.collection<FlashCardCategoryDb>();
-    final allCategories = await categoriesCollection.where().findAll();
+    final allCategories =
+        (await categoriesCollection.where().findAll()).reversed.toList();
 
     await Future.delayed(const Duration(seconds: 1));
     currentState = categoriesState.value.copyWith(
@@ -27,8 +28,11 @@ mixin FlashCardCategoriesLogicMixin {
       categories: allCategories
           .map((e) => FlashCardCategoryModel(
                 id: e.id.toString(),
-                title: e.title ?? '',
-                information: e.information ?? '',
+                title: e.title,
+                information: e.information,
+                isRecent: true,
+                lastCardIndex: 0,
+                lastUpdate: DateTime.now(),
               ))
           .toList(),
     );

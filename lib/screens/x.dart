@@ -4,16 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:page_flip_builder/page_flip_builder.dart';
 
 import 'package:flash_cards/core/extensions/string_extensions.dart';
-import 'package:flash_cards/modules/flash_card_list/flash_card_model.dart';
+import 'package:flash_cards/modules/flash_card_list/data/flash_card_data.dart';
 
 class FlashCardFlipCard extends StatelessWidget {
-  final FlashCardModel flashCard;
+  final FlashCardData flashCardData;
+  final int index;
   final LinearGradient gradient;
   final GlobalKey<PageFlipBuilderState> cardKey;
 
   const FlashCardFlipCard({
     Key? key,
-    required this.flashCard,
+    required this.flashCardData,
+    required this.index,
     required this.gradient,
     required this.cardKey,
   }) : super(key: key);
@@ -28,6 +30,7 @@ class FlashCardFlipCard extends StatelessWidget {
         onFlipComplete: (isFrontSide) => print('isFrontSide: $isFrontSide'),
         flipAxis: Axis.horizontal,
         backBuilder: (_) => Container(
+          width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: CupertinoColors.white,
@@ -46,10 +49,10 @@ class FlashCardFlipCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text('Back'),
-                Text(flashCard.frontText),
+                Text(flashCardData.frontText),
                 const SizedBox(height: 32),
                 Text(
-                  flashCard.backText,
+                  flashCardData.backText,
                   softWrap: true,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
@@ -60,7 +63,7 @@ class FlashCardFlipCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 32),
                 Text(
-                  flashCard.categoryId,
+                  (index + 1).toString(),
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
@@ -68,15 +71,6 @@ class FlashCardFlipCard extends StatelessWidget {
                     fontSize: 15,
                   ),
                 ),
-                const SizedBox(height: 16),
-                Text(
-                  flashCard.information,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 15,
-                  ),
-                )
               ],
             ),
           ),
@@ -108,7 +102,7 @@ class FlashCardFlipCard extends StatelessWidget {
                   Expanded(
                     child: Center(
                       child: Text(
-                        flashCard.frontText.toCapitalized(),
+                        flashCardData.frontText.toCapitalized(),
                         style: const TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,

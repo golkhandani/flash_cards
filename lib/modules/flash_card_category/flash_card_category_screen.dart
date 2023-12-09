@@ -44,7 +44,8 @@ class _FlashCardCategoryScreenState extends State<FlashCardCategoryScreen>
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(bottom: 88),
+            padding:
+                EdgeInsets.only(bottom: 88 + MediaQuery.paddingOf(context).top),
             sliver: ValueListenableBuilder(
               valueListenable: categoriesState,
               builder: (_, state, __) {
@@ -81,6 +82,7 @@ class _FlashCardCategoryScreenState extends State<FlashCardCategoryScreen>
                                   Text(
                                     state.categories[index].title,
                                     style: const TextStyle(fontSize: 30),
+                                    textAlign: TextAlign.center,
                                   ),
                                   const Spacer(),
                                   const Text(

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'flash_card_model.dart';
+part of 'flash_card_data.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-FlashCardModel _$FlashCardModelFromJson(Map<String, dynamic> json) {
-  return _FlashCardModel.fromJson(json);
+FlashCardData _$FlashCardDataFromJson(Map<String, dynamic> json) {
+  return _FlashCardData.fromJson(json);
 }
 
 /// @nodoc
-mixin _$FlashCardModel {
+mixin _$FlashCardData {
   String get id => throw _privateConstructorUsedError;
   String get frontText => throw _privateConstructorUsedError;
   String get backText => throw _privateConstructorUsedError; // statics
@@ -29,15 +29,15 @@ mixin _$FlashCardModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FlashCardModelCopyWith<FlashCardModel> get copyWith =>
+  $FlashCardDataCopyWith<FlashCardData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FlashCardModelCopyWith<$Res> {
-  factory $FlashCardModelCopyWith(
-          FlashCardModel value, $Res Function(FlashCardModel) then) =
-      _$FlashCardModelCopyWithImpl<$Res, FlashCardModel>;
+abstract class $FlashCardDataCopyWith<$Res> {
+  factory $FlashCardDataCopyWith(
+          FlashCardData value, $Res Function(FlashCardData) then) =
+      _$FlashCardDataCopyWithImpl<$Res, FlashCardData>;
   @useResult
   $Res call(
       {String id,
@@ -49,9 +49,9 @@ abstract class $FlashCardModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FlashCardModelCopyWithImpl<$Res, $Val extends FlashCardModel>
-    implements $FlashCardModelCopyWith<$Res> {
-  _$FlashCardModelCopyWithImpl(this._value, this._then);
+class _$FlashCardDataCopyWithImpl<$Res, $Val extends FlashCardData>
+    implements $FlashCardDataCopyWith<$Res> {
+  _$FlashCardDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -98,11 +98,11 @@ class _$FlashCardModelCopyWithImpl<$Res, $Val extends FlashCardModel>
 }
 
 /// @nodoc
-abstract class _$$FlashCardModelImplCopyWith<$Res>
-    implements $FlashCardModelCopyWith<$Res> {
-  factory _$$FlashCardModelImplCopyWith(_$FlashCardModelImpl value,
-          $Res Function(_$FlashCardModelImpl) then) =
-      __$$FlashCardModelImplCopyWithImpl<$Res>;
+abstract class _$$FlashCardDataImplCopyWith<$Res>
+    implements $FlashCardDataCopyWith<$Res> {
+  factory _$$FlashCardDataImplCopyWith(
+          _$FlashCardDataImpl value, $Res Function(_$FlashCardDataImpl) then) =
+      __$$FlashCardDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,11 +115,11 @@ abstract class _$$FlashCardModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FlashCardModelImplCopyWithImpl<$Res>
-    extends _$FlashCardModelCopyWithImpl<$Res, _$FlashCardModelImpl>
-    implements _$$FlashCardModelImplCopyWith<$Res> {
-  __$$FlashCardModelImplCopyWithImpl(
-      _$FlashCardModelImpl _value, $Res Function(_$FlashCardModelImpl) _then)
+class __$$FlashCardDataImplCopyWithImpl<$Res>
+    extends _$FlashCardDataCopyWithImpl<$Res, _$FlashCardDataImpl>
+    implements _$$FlashCardDataImplCopyWith<$Res> {
+  __$$FlashCardDataImplCopyWithImpl(
+      _$FlashCardDataImpl _value, $Res Function(_$FlashCardDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,7 +132,7 @@ class __$$FlashCardModelImplCopyWithImpl<$Res>
     Object? categoryId = null,
     Object? status = null,
   }) {
-    return _then(_$FlashCardModelImpl(
+    return _then(_$FlashCardDataImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -163,8 +163,8 @@ class __$$FlashCardModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FlashCardModelImpl implements _FlashCardModel {
-  const _$FlashCardModelImpl(
+class _$FlashCardDataImpl implements _FlashCardData {
+  const _$FlashCardDataImpl(
       {required this.id,
       required this.frontText,
       required this.backText,
@@ -172,8 +172,8 @@ class _$FlashCardModelImpl implements _FlashCardModel {
       required this.categoryId,
       this.status = FlashCardStatus.unknown});
 
-  factory _$FlashCardModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlashCardModelImplFromJson(json);
+  factory _$FlashCardDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlashCardDataImplFromJson(json);
 
   @override
   final String id;
@@ -192,14 +192,14 @@ class _$FlashCardModelImpl implements _FlashCardModel {
 
   @override
   String toString() {
-    return 'FlashCardModel(id: $id, frontText: $frontText, backText: $backText, information: $information, categoryId: $categoryId, status: $status)';
+    return 'FlashCardData(id: $id, frontText: $frontText, backText: $backText, information: $information, categoryId: $categoryId, status: $status)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FlashCardModelImpl &&
+            other is _$FlashCardDataImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.frontText, frontText) ||
                 other.frontText == frontText) &&
@@ -220,29 +220,28 @@ class _$FlashCardModelImpl implements _FlashCardModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FlashCardModelImplCopyWith<_$FlashCardModelImpl> get copyWith =>
-      __$$FlashCardModelImplCopyWithImpl<_$FlashCardModelImpl>(
-          this, _$identity);
+  _$$FlashCardDataImplCopyWith<_$FlashCardDataImpl> get copyWith =>
+      __$$FlashCardDataImplCopyWithImpl<_$FlashCardDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$FlashCardModelImplToJson(
+    return _$$FlashCardDataImplToJson(
       this,
     );
   }
 }
 
-abstract class _FlashCardModel implements FlashCardModel {
-  const factory _FlashCardModel(
+abstract class _FlashCardData implements FlashCardData {
+  const factory _FlashCardData(
       {required final String id,
       required final String frontText,
       required final String backText,
       required final String information,
       required final String categoryId,
-      final FlashCardStatus status}) = _$FlashCardModelImpl;
+      final FlashCardStatus status}) = _$FlashCardDataImpl;
 
-  factory _FlashCardModel.fromJson(Map<String, dynamic> json) =
-      _$FlashCardModelImpl.fromJson;
+  factory _FlashCardData.fromJson(Map<String, dynamic> json) =
+      _$FlashCardDataImpl.fromJson;
 
   @override
   String get id;
@@ -258,6 +257,6 @@ abstract class _FlashCardModel implements FlashCardModel {
   FlashCardStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$FlashCardModelImplCopyWith<_$FlashCardModelImpl> get copyWith =>
+  _$$FlashCardDataImplCopyWith<_$FlashCardDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

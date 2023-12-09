@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'flash_card_model.dart';
+part of 'flash_card_data.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FlashCardModelImpl _$$FlashCardModelImplFromJson(Map<String, dynamic> json) =>
-    _$FlashCardModelImpl(
+_$FlashCardDataImpl _$$FlashCardDataImplFromJson(Map<String, dynamic> json) =>
+    _$FlashCardDataImpl(
       id: json['id'] as String,
       frontText: json['frontText'] as String,
       backText: json['backText'] as String,
@@ -17,8 +17,7 @@ _$FlashCardModelImpl _$$FlashCardModelImplFromJson(Map<String, dynamic> json) =>
           FlashCardStatus.unknown,
     );
 
-Map<String, dynamic> _$$FlashCardModelImplToJson(
-        _$FlashCardModelImpl instance) =>
+Map<String, dynamic> _$$FlashCardDataImplToJson(_$FlashCardDataImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'frontText': instance.frontText,

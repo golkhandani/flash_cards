@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'flash_card_list_state.dart';
+part of 'flash_card_list_state_manager.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -20,9 +20,9 @@ FlashCardListState _$FlashCardListStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FlashCardListState {
-  String? get categoryId => throw _privateConstructorUsedError;
+  FlashCardCategoryModel? get category => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
-  List<FlashCardModel> get flashCards => throw _privateConstructorUsedError;
+  List<FlashCardData> get flashCards => throw _privateConstructorUsedError;
   int get initialIndex => throw _privateConstructorUsedError;
   int get currentIndex => throw _privateConstructorUsedError;
 
@@ -39,11 +39,13 @@ abstract class $FlashCardListStateCopyWith<$Res> {
       _$FlashCardListStateCopyWithImpl<$Res, FlashCardListState>;
   @useResult
   $Res call(
-      {String? categoryId,
+      {FlashCardCategoryModel? category,
       bool isLoading,
-      List<FlashCardModel> flashCards,
+      List<FlashCardData> flashCards,
       int initialIndex,
       int currentIndex});
+
+  $FlashCardCategoryModelCopyWith<$Res>? get category;
 }
 
 /// @nodoc
@@ -59,17 +61,17 @@ class _$FlashCardListStateCopyWithImpl<$Res, $Val extends FlashCardListState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categoryId = freezed,
+    Object? category = freezed,
     Object? isLoading = null,
     Object? flashCards = null,
     Object? initialIndex = null,
     Object? currentIndex = null,
   }) {
     return _then(_value.copyWith(
-      categoryId: freezed == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as FlashCardCategoryModel?,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -77,7 +79,7 @@ class _$FlashCardListStateCopyWithImpl<$Res, $Val extends FlashCardListState>
       flashCards: null == flashCards
           ? _value.flashCards
           : flashCards // ignore: cast_nullable_to_non_nullable
-              as List<FlashCardModel>,
+              as List<FlashCardData>,
       initialIndex: null == initialIndex
           ? _value.initialIndex
           : initialIndex // ignore: cast_nullable_to_non_nullable
@@ -87,6 +89,18 @@ class _$FlashCardListStateCopyWithImpl<$Res, $Val extends FlashCardListState>
           : currentIndex // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FlashCardCategoryModelCopyWith<$Res>? get category {
+    if (_value.category == null) {
+      return null;
+    }
+
+    return $FlashCardCategoryModelCopyWith<$Res>(_value.category!, (value) {
+      return _then(_value.copyWith(category: value) as $Val);
+    });
   }
 }
 
@@ -99,11 +113,14 @@ abstract class _$$FlashCardListStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? categoryId,
+      {FlashCardCategoryModel? category,
       bool isLoading,
-      List<FlashCardModel> flashCards,
+      List<FlashCardData> flashCards,
       int initialIndex,
       int currentIndex});
+
+  @override
+  $FlashCardCategoryModelCopyWith<$Res>? get category;
 }
 
 /// @nodoc
@@ -117,17 +134,17 @@ class __$$FlashCardListStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categoryId = freezed,
+    Object? category = freezed,
     Object? isLoading = null,
     Object? flashCards = null,
     Object? initialIndex = null,
     Object? currentIndex = null,
   }) {
     return _then(_$FlashCardListStateImpl(
-      categoryId: freezed == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as FlashCardCategoryModel?,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -135,7 +152,7 @@ class __$$FlashCardListStateImplCopyWithImpl<$Res>
       flashCards: null == flashCards
           ? _value._flashCards
           : flashCards // ignore: cast_nullable_to_non_nullable
-              as List<FlashCardModel>,
+              as List<FlashCardData>,
       initialIndex: null == initialIndex
           ? _value.initialIndex
           : initialIndex // ignore: cast_nullable_to_non_nullable
@@ -152,9 +169,9 @@ class __$$FlashCardListStateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FlashCardListStateImpl implements _FlashCardListState {
   const _$FlashCardListStateImpl(
-      {this.categoryId,
+      {this.category,
       this.isLoading = false,
-      final List<FlashCardModel> flashCards = const [],
+      final List<FlashCardData> flashCards = const [],
       this.initialIndex = 0,
       this.currentIndex = 0})
       : _flashCards = flashCards;
@@ -163,14 +180,14 @@ class _$FlashCardListStateImpl implements _FlashCardListState {
       _$$FlashCardListStateImplFromJson(json);
 
   @override
-  final String? categoryId;
+  final FlashCardCategoryModel? category;
   @override
   @JsonKey()
   final bool isLoading;
-  final List<FlashCardModel> _flashCards;
+  final List<FlashCardData> _flashCards;
   @override
   @JsonKey()
-  List<FlashCardModel> get flashCards {
+  List<FlashCardData> get flashCards {
     if (_flashCards is EqualUnmodifiableListView) return _flashCards;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_flashCards);
@@ -185,7 +202,7 @@ class _$FlashCardListStateImpl implements _FlashCardListState {
 
   @override
   String toString() {
-    return 'FlashCardListState(categoryId: $categoryId, isLoading: $isLoading, flashCards: $flashCards, initialIndex: $initialIndex, currentIndex: $currentIndex)';
+    return 'FlashCardListState(category: $category, isLoading: $isLoading, flashCards: $flashCards, initialIndex: $initialIndex, currentIndex: $currentIndex)';
   }
 
   @override
@@ -193,8 +210,8 @@ class _$FlashCardListStateImpl implements _FlashCardListState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FlashCardListStateImpl &&
-            (identical(other.categoryId, categoryId) ||
-                other.categoryId == categoryId) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             const DeepCollectionEquality()
@@ -209,7 +226,7 @@ class _$FlashCardListStateImpl implements _FlashCardListState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      categoryId,
+      category,
       isLoading,
       const DeepCollectionEquality().hash(_flashCards),
       initialIndex,
@@ -232,9 +249,9 @@ class _$FlashCardListStateImpl implements _FlashCardListState {
 
 abstract class _FlashCardListState implements FlashCardListState {
   const factory _FlashCardListState(
-      {final String? categoryId,
+      {final FlashCardCategoryModel? category,
       final bool isLoading,
-      final List<FlashCardModel> flashCards,
+      final List<FlashCardData> flashCards,
       final int initialIndex,
       final int currentIndex}) = _$FlashCardListStateImpl;
 
@@ -242,11 +259,11 @@ abstract class _FlashCardListState implements FlashCardListState {
       _$FlashCardListStateImpl.fromJson;
 
   @override
-  String? get categoryId;
+  FlashCardCategoryModel? get category;
   @override
   bool get isLoading;
   @override
-  List<FlashCardModel> get flashCards;
+  List<FlashCardData> get flashCards;
   @override
   int get initialIndex;
   @override

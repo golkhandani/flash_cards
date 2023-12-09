@@ -12,6 +12,9 @@ _$FlashCardCategoryModelImpl _$$FlashCardCategoryModelImplFromJson(
       id: json['id'] as String,
       title: json['title'] as String,
       information: json['information'] as String,
+      isRecent: json['isRecent'] as bool,
+      lastCardIndex: json['lastCardIndex'] as int,
+      lastUpdate: DateTime.parse(json['lastUpdate'] as String),
     );
 
 Map<String, dynamic> _$$FlashCardCategoryModelImplToJson(
@@ -20,4 +23,7 @@ Map<String, dynamic> _$$FlashCardCategoryModelImplToJson(
       'id': instance.id,
       'title': instance.title,
       'information': instance.information,
+      'isRecent': instance.isRecent,
+      'lastCardIndex': instance.lastCardIndex,
+      'lastUpdate': instance.lastUpdate.toIso8601String(),
     };

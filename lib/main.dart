@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:get_it/get_it.dart';
@@ -8,7 +11,10 @@ import 'package:responsive_framework/breakpoint.dart';
 import 'package:responsive_framework/responsive_breakpoints.dart';
 
 import 'package:flash_cards/core/fake_date.dart';
+import 'package:flash_cards/core/state_manager.dart';
 import 'package:flash_cards/modules/database/flash_card_collection.dart';
+import 'package:flash_cards/modules/flash_card_list/state_manager/flash_card_list_state_manager.dart';
+import 'package:flash_cards/modules/home/state_manager/home_state_manager.dart';
 import 'package:flash_cards/routes/dashboard_route.dart';
 import 'package:flash_cards/routes/on_boarding_route.dart';
 
@@ -16,6 +22,7 @@ GetIt getIt = GetIt.instance;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   final dir = await getApplicationDocumentsDirectory();
   final isar = await Isar.open(
     [
@@ -28,14 +35,34 @@ void main() async {
   getIt.registerSingleton<Isar>(isar);
 
   await isar.writeTxn(() async {
-    isar.clear();
+    final categoryCount = await isar.flashCardCategoryDbs.count();
+    final cardCount = await isar.flashCardDbs.count();
+
+    if (categoryCount != 0 && cardCount != 0) {
+      return;
+    }
+    await isar.clear();
     await isar.flashCardCategoryDbs.putAll(fakeFlashCardCategories
         .map((e) => FlashCardCategoryDb.fromJson(e))
         .toList());
 
     await isar.flashCardDbs
         .putAll(fakeFlashCards.map((e) => FlashCardDb.fromJson(e)).toList());
+
+    await isar.flashCardCategoryDbs.putAll(flashCardCategories504
+        .map((e) => FlashCardCategoryDb.fromJson(e))
+        .toList());
+
+    await isar.flashCardDbs.putAll(flashCards504.map((e) {
+      final item = Map<String, dynamic>.from(e);
+      item['categoryId'] = 20;
+      return FlashCardDb.fromJson(item);
+    }).toList());
   });
+
+  ///
+  ValueState.registerController(() => FlashCardListLogic());
+  ValueState.registerController(() => HomeLogic());
   runApp(const MyApp());
 }
 

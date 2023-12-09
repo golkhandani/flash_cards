@@ -2,12 +2,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:flash_cards/modules/database/flash_card_collection.dart';
 
-part 'flash_card_model.freezed.dart';
-part 'flash_card_model.g.dart';
+part 'flash_card_data.freezed.dart';
+part 'flash_card_data.g.dart';
 
 @freezed
-class FlashCardModel with _$FlashCardModel {
-  const factory FlashCardModel({
+class FlashCardData with _$FlashCardData {
+  const factory FlashCardData({
     required String id,
     required String frontText,
     required String backText,
@@ -15,9 +15,9 @@ class FlashCardModel with _$FlashCardModel {
     required String information,
     required String categoryId,
     @Default(FlashCardStatus.unknown) FlashCardStatus status,
-  }) = _FlashCardModel;
+  }) = _FlashCardData;
 
-  factory FlashCardModel.fromDb(FlashCardDb e) => FlashCardModel(
+  factory FlashCardData.fromDb(FlashCardDb e) => FlashCardData(
         id: e.id.toString(),
         frontText: e.frontText ?? '',
         backText: e.backText ?? '',
@@ -25,6 +25,6 @@ class FlashCardModel with _$FlashCardModel {
         categoryId: e.categoryIds.toString(),
       );
 
-  factory FlashCardModel.fromJson(Map<String, Object?> json) =>
-      _$FlashCardModelFromJson(json);
+  factory FlashCardData.fromJson(Map<String, Object?> json) =>
+      _$FlashCardDataFromJson(json);
 }
