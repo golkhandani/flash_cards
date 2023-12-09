@@ -27,7 +27,6 @@ class FlashCardFlipCard extends StatelessWidget {
       child: PageFlipBuilder(
         interactiveFlipEnabled: false,
         key: cardKey,
-        onFlipComplete: (isFrontSide) => print('isFrontSide: $isFrontSide'),
         flipAxis: Axis.horizontal,
         backBuilder: (_) => Container(
           width: MediaQuery.sizeOf(context).width,

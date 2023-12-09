@@ -10,10 +10,7 @@ import 'package:responsive_framework/responsive_breakpoints.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 
 import 'package:flash_cards/core/extensions/text_style_extension.dart';
-import 'package:flash_cards/core/fake_date.dart';
 import 'package:flash_cards/core/state_manager.dart';
-import 'package:flash_cards/modules/database/flash_card_collection.dart';
-import 'package:flash_cards/modules/flash_card_list/data/flash_card_data.dart';
 import 'package:flash_cards/modules/home/state_manager/home_state_manager.dart';
 import 'package:flash_cards/routes/flash_card_detail_route.dart';
 import 'package:flash_cards/routes/test_page.dart';

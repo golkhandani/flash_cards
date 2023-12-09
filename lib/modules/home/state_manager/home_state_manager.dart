@@ -37,8 +37,6 @@ class HomeLogic extends ValueStateController<HomeState> {
         .sortByLastUpdateDesc()
         .findFirst();
 
-    print("EQWEQWE -> ${category?.title}");
-
     if (category != null) {
       final cards = await flashCardsCollection
           .where()

@@ -52,7 +52,7 @@ class _FlashCardListScreenState extends State<FlashCardListScreen> {
   @override
   Widget build(BuildContext context) {
     final contentHeight = context.fixedContentHeight;
-    final footerHeight = 186.0;
+    const footerHeight = 186.0;
 
     return ValueState<FlashCardListLogic, FlashCardListState>.builder(
       builder: (_, state) {
@@ -76,9 +76,8 @@ class _FlashCardListScreenState extends State<FlashCardListScreen> {
                   ),
                 ),
                 SliverToBoxAdapter(
-                  child: Container(
+                  child: SizedBox(
                     height: contentHeight,
-                    // color: Colors.red,
                     child: Builder(builder: (_) {
                       if (state.isLoading) {
                         return const Center(
