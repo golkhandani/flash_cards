@@ -38,17 +38,23 @@ abstract class ValueStateController<S extends ValueStateModel> {
     _listeners.remove(listener.hashCode);
   }
 
-  void notify(S state) {
+  void notify(S currentState) {
     if (_stateHistory.length >= 10) {
       _stateHistory.remove(_stateHistory.keys.first);
     }
     _stateHistory.putIfAbsent(_historyKey, () => _stateNotifier.value);
-    _stateNotifier.value = state;
+    _stateNotifier.value = currentState;
   }
 
-  void dispose() {
+  void _dispose() {
     _stateHistory.clear();
     _stateNotifier.dispose();
+  }
+}
+
+class UnregistrableController<L extends ValueStateController> {
+  void unregister() {
+    ValueState.getController<L>()._dispose();
   }
 }
 
@@ -56,11 +62,10 @@ class ValueState<L extends ValueStateController<S>, S extends ValueStateModel>
     extends StatelessWidget {
   static final _vsRegistry = GetIt.asNewInstance();
 
-  static void registerController<L extends ValueStateController>(
-    L Function() l,
-  ) {
+  static UnregistrableController<L>
+      registerController<L extends ValueStateController>(L Function() l) {
     _vsRegistry.registerLazySingleton<L>(l);
-    return;
+    return UnregistrableController<L>();
   }
 
   static L getController<L extends ValueStateController>() {

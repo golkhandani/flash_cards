@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'flash_card_category_state.dart';
+part of 'flash_card_categories_state_manager.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -22,7 +22,7 @@ FlashCardCategoryState _$FlashCardCategoryStateFromJson(
 /// @nodoc
 mixin _$FlashCardCategoryState {
   bool get isLoading => throw _privateConstructorUsedError;
-  List<FlashCardCategoryModel> get categories =>
+  List<FlashCardCategoryData> get categories =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,7 +37,7 @@ abstract class $FlashCardCategoryStateCopyWith<$Res> {
           $Res Function(FlashCardCategoryState) then) =
       _$FlashCardCategoryStateCopyWithImpl<$Res, FlashCardCategoryState>;
   @useResult
-  $Res call({bool isLoading, List<FlashCardCategoryModel> categories});
+  $Res call({bool isLoading, List<FlashCardCategoryData> categories});
 }
 
 /// @nodoc
@@ -65,7 +65,7 @@ class _$FlashCardCategoryStateCopyWithImpl<$Res,
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<FlashCardCategoryModel>,
+              as List<FlashCardCategoryData>,
     ) as $Val);
   }
 }
@@ -79,7 +79,7 @@ abstract class _$$FlashCardCategoryStateImplCopyWith<$Res>
       __$$FlashCardCategoryStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, List<FlashCardCategoryModel> categories});
+  $Res call({bool isLoading, List<FlashCardCategoryData> categories});
 }
 
 /// @nodoc
@@ -106,7 +106,7 @@ class __$$FlashCardCategoryStateImplCopyWithImpl<$Res>
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<FlashCardCategoryModel>,
+              as List<FlashCardCategoryData>,
     ));
   }
 }
@@ -116,7 +116,7 @@ class __$$FlashCardCategoryStateImplCopyWithImpl<$Res>
 class _$FlashCardCategoryStateImpl implements _FlashCardCategoryState {
   const _$FlashCardCategoryStateImpl(
       {this.isLoading = false,
-      final List<FlashCardCategoryModel> categories = const []})
+      final List<FlashCardCategoryData> categories = const []})
       : _categories = categories;
 
   factory _$FlashCardCategoryStateImpl.fromJson(Map<String, dynamic> json) =>
@@ -125,10 +125,10 @@ class _$FlashCardCategoryStateImpl implements _FlashCardCategoryState {
   @override
   @JsonKey()
   final bool isLoading;
-  final List<FlashCardCategoryModel> _categories;
+  final List<FlashCardCategoryData> _categories;
   @override
   @JsonKey()
-  List<FlashCardCategoryModel> get categories {
+  List<FlashCardCategoryData> get categories {
     if (_categories is EqualUnmodifiableListView) return _categories;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_categories);
@@ -173,7 +173,7 @@ class _$FlashCardCategoryStateImpl implements _FlashCardCategoryState {
 abstract class _FlashCardCategoryState implements FlashCardCategoryState {
   const factory _FlashCardCategoryState(
           {final bool isLoading,
-          final List<FlashCardCategoryModel> categories}) =
+          final List<FlashCardCategoryData> categories}) =
       _$FlashCardCategoryStateImpl;
 
   factory _FlashCardCategoryState.fromJson(Map<String, dynamic> json) =
@@ -182,7 +182,7 @@ abstract class _FlashCardCategoryState implements FlashCardCategoryState {
   @override
   bool get isLoading;
   @override
-  List<FlashCardCategoryModel> get categories;
+  List<FlashCardCategoryData> get categories;
   @override
   @JsonKey(ignore: true)
   _$$FlashCardCategoryStateImplCopyWith<_$FlashCardCategoryStateImpl>

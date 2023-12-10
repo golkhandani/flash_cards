@@ -1,7 +1,14 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'package:go_router/go_router.dart';
+import 'package:introduction_screen/introduction_screen.dart' as intro;
 import 'package:introduction_screen/introduction_screen.dart';
+
+import 'package:flash_cards/core/constants/ui_constants.dart';
+import 'package:flash_cards/core/extensions/color_extentions.dart';
+import 'package:flash_cards/core/extensions/context_ui_extension.dart';
+import 'package:flash_cards/core/extensions/text_style_extension.dart';
+import 'package:flash_cards/routes/dashboard_route.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -13,85 +20,106 @@ class OnBoardingScreen extends StatefulWidget {
 class OnBoardingScreenState extends State<OnBoardingScreen> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
-  void _onIntroEnd(context) {}
-
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(fontSize: 19.0);
-
-    const pageDecoration = PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-      bodyTextStyle: bodyStyle,
-      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
-      imagePadding: EdgeInsets.zero,
+    const bg = Colors.transparent;
+    final fontColor = context.colorScheme.secondary;
+    final decoration = intro.PageDecoration(
+      pageColor: bg,
+      titleTextStyle: context.titleLargePrimaryContainer.withColor(fontColor)!,
+      bodyTextStyle: context.textTheme.bodyLarge!.withColor(fontColor)!,
+      pageMargin: const EdgeInsets.only(top: 200),
+      imagePadding: EdgeInsets.only(top: context.vHeight / 10),
     );
-
-    return IntroductionScreen(
-      key: introKey,
-      globalBackgroundColor: Colors.white,
-      allowImplicitScrolling: true,
-      autoScrollDuration: 3000,
-      infiniteAutoScroll: true,
-      globalFooter: SizedBox(
-        width: double.infinity,
-        height: 60,
-        child: ElevatedButton(
-          child: const Text(
-            'Let\'s go right away!',
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+    final pages = [
+      intro.PageViewModel(
+        decoration: decoration,
+        title: "Art and Adventure Companion",
+        body:
+            "Get ready to explore amazing city landmarks and enjoy unforgettable experiences without the hassle of planning.",
+      ),
+      intro.PageViewModel(
+        decoration: decoration,
+        title: "Unveiling the Magic of your City",
+        body:
+            "Dive into our app to discover hidden gems and thrilling events and arts that will make every day an unforgettable journey.",
+      ),
+      intro.PageViewModel(
+        decoration: decoration,
+        title: "Personalized Adventures at Your Fingertips",
+        body:
+            "Your city adventures are personalized just for you. Find activities that match your preferences, ensuring that each experience is a perfect fit for your taste and style.",
+      ),
+      intro.PageViewModel(
+        decoration: decoration,
+        title: "“Speak Friend and Enter”",
+        bodyWidget: Column(
+          children: [
+            Text(
+              "In thy neighborhood, if thou wishest to discern the happenings, grant access to thy location, thou must.",
+              style: decoration.bodyTextStyle,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 48),
+          ],
+        ),
+      )
+    ];
+    return Container(
+      color: context.colorScheme.background,
+      padding: const EdgeInsets.symmetric(vertical: 32),
+      child: Stack(
+        children: [
+          intro.IntroductionScreen(
+            globalBackgroundColor: bg,
+            dotsDecorator: intro.DotsDecorator(
+              size: const Size.square(10.0),
+              activeSize: const Size(50.0, 10.0),
+              activeColor: context.colorScheme.primary,
+              color: fontColor,
+              spacing: const EdgeInsets.symmetric(horizontal: 3.0),
+              activeShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0)),
+            ),
+            dotsContainerDecorator: const BoxDecoration(color: bg),
+            pages: pages,
+            showSkipButton: true,
+            skip: _buildButton('Skip', context),
+            next: _buildButton('Next', context),
+            done: _buildButton('Done', context),
+            onDone: () => onDone(),
+            onSkip: () => onDone(),
           ),
-          onPressed: () => _onIntroEnd(context),
+        ],
+      ),
+    );
+  }
+
+  void onDone() {
+    context.goNamed(dashboardRoute.name!);
+  }
+
+  Widget _buildButton(
+    String text,
+    BuildContext context,
+  ) {
+    return Container(
+      padding: kTinyPadding,
+      alignment: Alignment.center,
+      constraints: const BoxConstraints.expand(height: 48),
+      decoration: ShapeDecoration(
+        color: context.colorScheme.primary,
+        shape: const StadiumBorder(
+          side: BorderSide(
+            width: 0,
+            color: Colors.transparent,
+          ),
         ),
       ),
-      pages: [
-        PageViewModel(
-          title: "Fractional shares",
-          body:
-              "Instead of having to buy an entire share, invest any amount you want.",
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Learn as you go",
-          body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Kids and teens",
-          body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-          decoration: pageDecoration,
-        ),
-      ],
-      onDone: () => _onIntroEnd(context),
-      onSkip: () => _onIntroEnd(context), // You can override onSkip callback
-      showSkipButton: true,
-      skipOrBackFlex: 0,
-      nextFlex: 0,
-      showBackButton: false,
-      //rtl: true, // Display as right-to-left
-      back: const Icon(Icons.arrow_back),
-      skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
-      curve: Curves.fastLinearToSlowEaseIn,
-      controlsMargin: const EdgeInsets.all(16),
-      controlsPadding: kIsWeb
-          ? const EdgeInsets.all(12.0)
-          : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
-      dotsDecorator: const DotsDecorator(
-        size: Size(10.0, 10.0),
-        color: Color(0xFFBDBDBD),
-        activeSize: Size(22.0, 10.0),
-        activeShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(25.0)),
-        ),
-      ),
-      dotsContainerDecorator: const ShapeDecoration(
-        color: Colors.black87,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+      child: Text(
+        text,
+        style: context.titleMediumOnPrimaryContainer.withColor(
+          context.colorScheme.onTertiary,
         ),
       ),
     );

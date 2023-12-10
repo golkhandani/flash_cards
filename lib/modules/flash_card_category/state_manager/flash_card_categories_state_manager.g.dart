@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'flash_card_category_state.dart';
+part of 'flash_card_categories_state_manager.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -12,7 +12,7 @@ _$FlashCardCategoryStateImpl _$$FlashCardCategoryStateImplFromJson(
       isLoading: json['isLoading'] as bool? ?? false,
       categories: (json['categories'] as List<dynamic>?)
               ?.map((e) =>
-                  FlashCardCategoryModel.fromJson(e as Map<String, dynamic>))
+                  FlashCardCategoryData.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );

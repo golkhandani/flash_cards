@@ -11,10 +11,10 @@ import 'package:sliver_tools/sliver_tools.dart';
 
 import 'package:flash_cards/core/extensions/text_style_extension.dart';
 import 'package:flash_cards/core/state_manager.dart';
+import 'package:flash_cards/modules/flash_card_list/flash_card_flip_card.dart';
 import 'package:flash_cards/modules/home/state_manager/home_state_manager.dart';
 import 'package:flash_cards/routes/flash_card_detail_route.dart';
 import 'package:flash_cards/routes/test_page.dart';
-import 'package:flash_cards/screens/x.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -137,11 +137,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: SizedBox(
                                           height: cartPreviewHeight,
                                           child: CardSwiper(
-                                            cardsCount: previewItems.length,
-                                            cardBuilder: (BuildContext context,
-                                                int index,
-                                                int horizontalOffsetPercentage,
-                                                int verticalOffsetPercentage) {
+                                            cardsCount: 2,
+                                            numberOfCardsDisplayed: 2,
+                                            cardBuilder:
+                                                (context, index, _, __) {
                                               return previewItems[index];
                                             },
                                           ),

@@ -51,7 +51,7 @@ class FlashCardFlipCard extends StatelessWidget {
                 Text(flashCardData.frontText),
                 const SizedBox(height: 32),
                 Text(
-                  flashCardData.backText,
+                  flashCardData.backText.toCapitalized(),
                   softWrap: true,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
@@ -60,6 +60,7 @@ class FlashCardFlipCard extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
+                const Spacer(),
                 const SizedBox(height: 32),
                 Text(
                   (index + 1).toString(),

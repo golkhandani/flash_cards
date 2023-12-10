@@ -4,7 +4,7 @@ import 'package:isar/isar.dart';
 import 'package:flash_cards/core/state_manager.dart';
 import 'package:flash_cards/main.dart';
 import 'package:flash_cards/modules/database/flash_card_collection.dart';
-import 'package:flash_cards/modules/flash_card_category/flash_card_category_model.dart';
+import 'package:flash_cards/modules/flash_card_category/data/flash_card_category_data.dart';
 import 'package:flash_cards/modules/flash_card_list/data/flash_card_data.dart';
 import 'package:flash_cards/modules/home/state_manager/home_state_manager.dart';
 
@@ -14,7 +14,7 @@ part 'flash_card_list_state_manager.g.dart';
 @freezed
 class FlashCardListState extends ValueStateModel with _$FlashCardListState {
   const factory FlashCardListState({
-    FlashCardCategoryModel? category,
+    FlashCardCategoryData? category,
     @Default(false) bool isLoading,
     @Default([]) List<FlashCardData> flashCards,
     @Default(0) int initialIndex,
@@ -50,9 +50,9 @@ class FlashCardListLogic extends ValueStateController<FlashCardListState> {
     notify(
       currentState.copyWith(
         isLoading: false,
-        initialIndex: category.lastCardIndex,
+        initialIndex: category.lastCardIndex.clamp(0, allFlashCards.length - 1),
         currentIndex: category.lastCardIndex,
-        category: FlashCardCategoryModel.fromDb(category),
+        category: FlashCardCategoryData.fromDb(category),
         flashCards: allFlashCards
             .map(
               (e) => FlashCardData(
@@ -87,7 +87,7 @@ class FlashCardListLogic extends ValueStateController<FlashCardListState> {
       await _flashCardCategoryCollection.put(category);
       notify(
         currentState.copyWith(
-          category: FlashCardCategoryModel.fromDb(category),
+          category: FlashCardCategoryData.fromDb(category),
         ),
       );
     });

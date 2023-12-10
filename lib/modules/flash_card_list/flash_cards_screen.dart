@@ -8,9 +8,9 @@ import 'package:sliver_tools/sliver_tools.dart';
 import 'package:flash_cards/core/extensions/context_ui_extension.dart';
 import 'package:flash_cards/core/extensions/text_style_extension.dart';
 import 'package:flash_cards/core/state_manager.dart';
+import 'package:flash_cards/modules/flash_card_list/flash_card_flip_card.dart';
 import 'package:flash_cards/modules/flash_card_list/state_manager/flash_card_list_state_manager.dart';
 import 'package:flash_cards/routes/test_page.dart';
-import 'package:flash_cards/screens/x.dart';
 
 class FlashCardListScreen extends StatefulWidget {
   final String categoryId;
@@ -29,9 +29,6 @@ class _FlashCardListScreenState extends State<FlashCardListScreen> {
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         _swiperController.reInit();
       });
-    }
-    if (o.category != c.category) {
-      // _homeLogic.loadData();
     }
   }
 
@@ -246,7 +243,7 @@ class AlwaysVisibleThumbSlider extends StatelessWidget {
         value: value.toDouble(),
         max: max.toDouble(),
         divisions: max,
-        label: (value + labelIncrement).toString(),
+        label: '${(value + labelIncrement)} from ${max.toInt()}'.toString(),
         onChanged: onChanged,
       ),
     );

@@ -1,10 +1,12 @@
+import 'dart:math';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:isar/isar.dart';
 
 import 'package:flash_cards/core/state_manager.dart';
 import 'package:flash_cards/main.dart';
 import 'package:flash_cards/modules/database/flash_card_collection.dart';
-import 'package:flash_cards/modules/flash_card_category/flash_card_category_model.dart';
+import 'package:flash_cards/modules/flash_card_category/data/flash_card_category_data.dart';
 import 'package:flash_cards/modules/flash_card_list/data/flash_card_data.dart';
 
 part 'home_state_manager.freezed.dart';
@@ -13,7 +15,7 @@ part 'home_state_manager.g.dart';
 @freezed
 class HomeState extends ValueStateModel with _$HomeState {
   const factory HomeState({
-    FlashCardCategoryModel? flashCardCategory,
+    FlashCardCategoryData? flashCardCategory,
     List<FlashCardData>? flashCards,
     @Default(false) bool isLoading,
   }) = _HomeState;
@@ -38,17 +40,22 @@ class HomeLogic extends ValueStateController<HomeState> {
         .findFirst();
 
     if (category != null) {
+      final cardCounts = await flashCardsCollection
+          .where()
+          .filter()
+          .categoryIdsElementEqualTo(category.id)
+          .count();
       final cards = await flashCardsCollection
           .where()
           .filter()
           .categoryIdsElementEqualTo(category.id)
-          .offset(category.lastCardIndex)
+          .offset(min(category.lastCardIndex, cardCounts - 2))
           .limit(2)
           .findAll();
       notify(
         currentState.copyWith(
           isLoading: false,
-          flashCardCategory: FlashCardCategoryModel.fromDb(category),
+          flashCardCategory: FlashCardCategoryData.fromDb(category),
           flashCards: cards.map((e) => FlashCardData.fromDb(e)).toList(),
         ),
       );

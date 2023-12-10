@@ -2,22 +2,22 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:flash_cards/modules/database/flash_card_collection.dart';
 
-part 'flash_card_category_model.freezed.dart';
-part 'flash_card_category_model.g.dart';
+part 'flash_card_category_data.freezed.dart';
+part 'flash_card_category_data.g.dart';
 
 @freezed
-class FlashCardCategoryModel with _$FlashCardCategoryModel {
-  const factory FlashCardCategoryModel({
+class FlashCardCategoryData with _$FlashCardCategoryData {
+  const factory FlashCardCategoryData({
     required String id,
     required String title,
     required String information,
     required bool isRecent,
     required int lastCardIndex,
     required DateTime lastUpdate,
-  }) = _FlashCardCategoryModel;
+  }) = _FlashCardCategoryData;
 
-  factory FlashCardCategoryModel.fromDb(FlashCardCategoryDb db) =>
-      FlashCardCategoryModel(
+  factory FlashCardCategoryData.fromDb(FlashCardCategoryDb db) =>
+      FlashCardCategoryData(
         id: db.id.toString(),
         title: db.title,
         information: db.information,
@@ -26,6 +26,6 @@ class FlashCardCategoryModel with _$FlashCardCategoryModel {
         lastUpdate: db.lastUpdate,
       );
 
-  factory FlashCardCategoryModel.fromJson(Map<String, Object?> json) =>
-      _$FlashCardCategoryModelFromJson(json);
+  factory FlashCardCategoryData.fromJson(Map<String, Object?> json) =>
+      _$FlashCardCategoryDataFromJson(json);
 }

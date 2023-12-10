@@ -11,7 +11,7 @@ _$FlashCardListStateImpl _$$FlashCardListStateImplFromJson(
     _$FlashCardListStateImpl(
       category: json['category'] == null
           ? null
-          : FlashCardCategoryModel.fromJson(
+          : FlashCardCategoryData.fromJson(
               json['category'] as Map<String, dynamic>),
       isLoading: json['isLoading'] as bool? ?? false,
       flashCards: (json['flashCards'] as List<dynamic>?)

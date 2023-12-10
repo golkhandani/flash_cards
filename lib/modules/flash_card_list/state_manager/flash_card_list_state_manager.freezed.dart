@@ -20,7 +20,7 @@ FlashCardListState _$FlashCardListStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FlashCardListState {
-  FlashCardCategoryModel? get category => throw _privateConstructorUsedError;
+  FlashCardCategoryData? get category => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   List<FlashCardData> get flashCards => throw _privateConstructorUsedError;
   int get initialIndex => throw _privateConstructorUsedError;
@@ -39,13 +39,13 @@ abstract class $FlashCardListStateCopyWith<$Res> {
       _$FlashCardListStateCopyWithImpl<$Res, FlashCardListState>;
   @useResult
   $Res call(
-      {FlashCardCategoryModel? category,
+      {FlashCardCategoryData? category,
       bool isLoading,
       List<FlashCardData> flashCards,
       int initialIndex,
       int currentIndex});
 
-  $FlashCardCategoryModelCopyWith<$Res>? get category;
+  $FlashCardCategoryDataCopyWith<$Res>? get category;
 }
 
 /// @nodoc
@@ -71,7 +71,7 @@ class _$FlashCardListStateCopyWithImpl<$Res, $Val extends FlashCardListState>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as FlashCardCategoryModel?,
+              as FlashCardCategoryData?,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -93,12 +93,12 @@ class _$FlashCardListStateCopyWithImpl<$Res, $Val extends FlashCardListState>
 
   @override
   @pragma('vm:prefer-inline')
-  $FlashCardCategoryModelCopyWith<$Res>? get category {
+  $FlashCardCategoryDataCopyWith<$Res>? get category {
     if (_value.category == null) {
       return null;
     }
 
-    return $FlashCardCategoryModelCopyWith<$Res>(_value.category!, (value) {
+    return $FlashCardCategoryDataCopyWith<$Res>(_value.category!, (value) {
       return _then(_value.copyWith(category: value) as $Val);
     });
   }
@@ -113,14 +113,14 @@ abstract class _$$FlashCardListStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FlashCardCategoryModel? category,
+      {FlashCardCategoryData? category,
       bool isLoading,
       List<FlashCardData> flashCards,
       int initialIndex,
       int currentIndex});
 
   @override
-  $FlashCardCategoryModelCopyWith<$Res>? get category;
+  $FlashCardCategoryDataCopyWith<$Res>? get category;
 }
 
 /// @nodoc
@@ -144,7 +144,7 @@ class __$$FlashCardListStateImplCopyWithImpl<$Res>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as FlashCardCategoryModel?,
+              as FlashCardCategoryData?,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -180,7 +180,7 @@ class _$FlashCardListStateImpl implements _FlashCardListState {
       _$$FlashCardListStateImplFromJson(json);
 
   @override
-  final FlashCardCategoryModel? category;
+  final FlashCardCategoryData? category;
   @override
   @JsonKey()
   final bool isLoading;
@@ -249,7 +249,7 @@ class _$FlashCardListStateImpl implements _FlashCardListState {
 
 abstract class _FlashCardListState implements FlashCardListState {
   const factory _FlashCardListState(
-      {final FlashCardCategoryModel? category,
+      {final FlashCardCategoryData? category,
       final bool isLoading,
       final List<FlashCardData> flashCards,
       final int initialIndex,
@@ -259,7 +259,7 @@ abstract class _FlashCardListState implements FlashCardListState {
       _$FlashCardListStateImpl.fromJson;
 
   @override
-  FlashCardCategoryModel? get category;
+  FlashCardCategoryData? get category;
   @override
   bool get isLoading;
   @override

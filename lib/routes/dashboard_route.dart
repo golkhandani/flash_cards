@@ -30,8 +30,7 @@ final dashboardRoute = GoRoute(
   path: '/${DashboardScreen.name}',
   redirect: (context, state) async {
     return state.namedLocation(
-      dashboarCategoriesRoute.name ??
-          DashboardWrapper.dashboardRouteNameToSelectedIndexMap.keys.first,
+      DashboardWrapper.dashboardRouteNameToSelectedIndexMap.keys.first,
     );
   },
   builder: (context, state) => const DashboardScreen(),

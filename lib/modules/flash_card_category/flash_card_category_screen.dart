@@ -4,10 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 
 import 'package:flash_cards/core/extensions/text_style_extension.dart';
-import 'package:flash_cards/modules/flash_card_category/flash_card_category_logic.dart';
+import 'package:flash_cards/core/state_manager.dart';
+import 'package:flash_cards/modules/flash_card_category/state_manager/flash_card_categories_state_manager.dart';
+import 'package:flash_cards/modules/flash_card_list/flash_card_flip_card.dart';
 import 'package:flash_cards/routes/flash_card_detail_route.dart';
 import 'package:flash_cards/routes/test_page.dart';
-import 'package:flash_cards/screens/x.dart';
 
 class FlashCardCategoryScreen extends StatefulWidget {
   const FlashCardCategoryScreen({super.key});
@@ -17,11 +18,11 @@ class FlashCardCategoryScreen extends StatefulWidget {
       _FlashCardCategoryScreenState();
 }
 
-class _FlashCardCategoryScreenState extends State<FlashCardCategoryScreen>
-    with FlashCardCategoriesLogicMixin {
+class _FlashCardCategoryScreenState extends State<FlashCardCategoryScreen> {
+  final _controller = ValueState.getController<FlashCardCategoriesController>();
   @override
   void initState() {
-    loadData();
+    _controller.loadData();
     super.initState();
   }
 
@@ -43,20 +44,21 @@ class _FlashCardCategoryScreenState extends State<FlashCardCategoryScreen>
               shadowColor: Colors.black26,
             ),
           ),
-          SliverPadding(
-            padding:
-                EdgeInsets.only(bottom: 88 + MediaQuery.paddingOf(context).top),
-            sliver: ValueListenableBuilder(
-              valueListenable: categoriesState,
-              builder: (_, state, __) {
-                if (state.isLoading) {
-                  return const SliverFillRemaining(
-                    child: Center(
-                      child: CircularProgressIndicator.adaptive(),
-                    ),
-                  );
-                }
-                return SliverList(
+          ValueState<FlashCardCategoriesController,
+              FlashCardCategoryState>.builder(
+            builder: (c, state) {
+              if (state.isLoading) {
+                return const SliverFillRemaining(
+                  child: Center(
+                    child: CircularProgressIndicator.adaptive(),
+                  ),
+                );
+              }
+
+              return SliverPadding(
+                padding: EdgeInsets.only(
+                    bottom: 88 + MediaQuery.paddingOf(context).top),
+                sliver: SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (_, index) {
                       return Padding(
@@ -85,10 +87,6 @@ class _FlashCardCategoryScreenState extends State<FlashCardCategoryScreen>
                                     textAlign: TextAlign.center,
                                   ),
                                   const Spacer(),
-                                  const Text(
-                                    '100 unique cards',
-                                    style: TextStyle(fontSize: 22),
-                                  ),
                                   Text(
                                     state.categories[index].information,
                                     style: const TextStyle(fontSize: 14),
@@ -103,9 +101,9 @@ class _FlashCardCategoryScreenState extends State<FlashCardCategoryScreen>
                     // 40 list items
                     childCount: state.categories.length,
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
         ],
       ),
