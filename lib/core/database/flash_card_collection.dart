@@ -6,7 +6,7 @@ enum FlashCardStatus { unknown, success, failure }
 
 @collection
 @Name("FlashCardCategoryItems")
-class FlashCardCategoryDb {
+class LessonDb {
   Id id = Isar.autoIncrement;
   late String title;
   late String information;
@@ -14,8 +14,8 @@ class FlashCardCategoryDb {
   late int lastCardIndex = 0;
   late DateTime lastUpdate = DateTime.now();
 
-  static FlashCardCategoryDb fromJson(Map<String, dynamic> json) {
-    final converted = FlashCardCategoryDb()
+  static LessonDb fromJson(Map<String, dynamic> json) {
+    final converted = LessonDb()
       ..id = json['id'] as int
       ..title = json['title'] as String
       ..information = json['information'] as String

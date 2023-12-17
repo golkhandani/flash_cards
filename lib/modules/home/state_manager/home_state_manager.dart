@@ -3,19 +3,19 @@ import 'dart:math';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:isar/isar.dart';
 
-import 'package:flash_cards/core/state_manager.dart';
-import 'package:flash_cards/main.dart';
-import 'package:flash_cards/modules/database/flash_card_collection.dart';
-import 'package:flash_cards/modules/flash_card_category/data/flash_card_category_data.dart';
-import 'package:flash_cards/modules/flash_card_list/data/flash_card_data.dart';
+import 'package:word_wise_flash_cards/core/database/flash_card_collection.dart';
+import 'package:word_wise_flash_cards/core/state_manager.dart';
+import 'package:word_wise_flash_cards/main.dart';
+import 'package:word_wise_flash_cards/modules/flash_card_list/data/flash_card_data.dart';
+import 'package:word_wise_flash_cards/modules/lesson_list/data/lesson_data.dart';
 
 part 'home_state_manager.freezed.dart';
 part 'home_state_manager.g.dart';
 
 @freezed
-class HomeState extends ValueStateModel with _$HomeState {
+class HomeState extends VsmModel with _$HomeState {
   const factory HomeState({
-    FlashCardCategoryData? flashCardCategory,
+    LessonData? flashCardCategory,
     List<FlashCardData>? flashCards,
     @Default(false) bool isLoading,
   }) = _HomeState;
@@ -24,15 +24,14 @@ class HomeState extends ValueStateModel with _$HomeState {
       _$HomeStateFromJson(json);
 }
 
-class HomeLogic extends ValueStateController<HomeState> {
+class HomeController extends VsmController<HomeState> {
   final isar = getIt.get<Isar>();
   late final flashCardsCollection = isar.collection<FlashCardDb>();
-  late final flashCardCategoryCollection =
-      isar.collection<FlashCardCategoryDb>();
+  late final flashCardCategoryCollection = isar.collection<LessonDb>();
 
-  HomeLogic() : super(const HomeState());
+  HomeController() : super(const HomeState());
   Future<void> loadData() async {
-    notify(currentState.copyWith(isLoading: true));
+    notify(value.copyWith(isLoading: true));
 
     final category = await flashCardCategoryCollection
         .where()
@@ -53,9 +52,9 @@ class HomeLogic extends ValueStateController<HomeState> {
           .limit(2)
           .findAll();
       notify(
-        currentState.copyWith(
+        value.copyWith(
           isLoading: false,
-          flashCardCategory: FlashCardCategoryData.fromDb(category),
+          flashCardCategory: LessonData.fromDb(category),
           flashCards: cards.map((e) => FlashCardData.fromDb(e)).toList(),
         ),
       );

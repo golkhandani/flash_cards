@@ -25,6 +25,8 @@ extension UiBreakPointDetection on BuildContext {
   EdgeInsets get viewTopPadding => EdgeInsets.only(top: viewTopPaddingHeight);
   EdgeInsets get viewBottomPadding =>
       EdgeInsets.only(bottom: viewBottomPaddingHeight);
+  EdgeInsets get viewBottomPaddingWithFooter =>
+      EdgeInsets.only(bottom: viewBottomPaddingHeight + footerHeight);
 
   double get footerHeight => 88;
   double get invisibleHeight =>

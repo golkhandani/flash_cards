@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:flash_cards/modules/database/flash_card_collection.dart';
+import 'package:word_wise_flash_cards/core/database/flash_card_collection.dart';
 
 part 'flash_card_data.freezed.dart';
 part 'flash_card_data.g.dart';

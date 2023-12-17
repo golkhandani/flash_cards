@@ -5,12 +5,12 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:page_flip_builder/page_flip_builder.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 
-import 'package:flash_cards/core/extensions/context_ui_extension.dart';
-import 'package:flash_cards/core/extensions/text_style_extension.dart';
-import 'package:flash_cards/core/state_manager.dart';
-import 'package:flash_cards/modules/flash_card_list/flash_card_flip_card.dart';
-import 'package:flash_cards/modules/flash_card_list/state_manager/flash_card_list_state_manager.dart';
-import 'package:flash_cards/routes/test_page.dart';
+import 'package:word_wise_flash_cards/core/extensions/context_ui_extension.dart';
+import 'package:word_wise_flash_cards/core/extensions/text_style_extension.dart';
+import 'package:word_wise_flash_cards/core/state_manager.dart';
+import 'package:word_wise_flash_cards/modules/flash_card_list/flash_card_flip_card.dart';
+import 'package:word_wise_flash_cards/modules/flash_card_list/state_manager/flash_card_list_state_manager.dart';
+import 'package:word_wise_flash_cards/routes/test_page.dart';
 
 class FlashCardListScreen extends StatefulWidget {
   final String categoryId;
@@ -23,7 +23,7 @@ class FlashCardListScreen extends StatefulWidget {
 class _FlashCardListScreenState extends State<FlashCardListScreen> {
   final CardSwiperController _swiperController = CardSwiperController();
 
-  final _logic = ValueState.getController<FlashCardListLogic>();
+  final _logic = Vsm.get<FlashCardListController>();
   void listener(FlashCardListState o, FlashCardListState c) {
     if (o.currentIndex != c.currentIndex) {
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
@@ -51,7 +51,7 @@ class _FlashCardListScreenState extends State<FlashCardListScreen> {
     final contentHeight = context.fixedContentHeight;
     const footerHeight = 186.0;
 
-    return ValueState<FlashCardListLogic, FlashCardListState>.builder(
+    return VsmView<FlashCardListController, FlashCardListState>(
       builder: (_, state) {
         return Material(
           color: context.colorScheme.background,
@@ -61,15 +61,20 @@ class _FlashCardListScreenState extends State<FlashCardListScreen> {
               slivers: [
                 SliverPinnedHeader(
                   child: AppBar(
-                    scrolledUnderElevation: 2,
+                    scrolledUnderElevation: 10,
                     elevation: 2,
                     forceMaterialTransparency: false,
                     automaticallyImplyLeading: false,
                     surfaceTintColor: Colors.transparent,
                     backgroundColor: context.colorScheme.tertiaryContainer,
                     leading: const MyBackButton(),
-                    title: Text(state.category?.title ?? ''),
-                    shadowColor: Colors.black26,
+                    title: Text(
+                      state.category?.title ?? '',
+                      style: TextStyle(
+                        color: context.colorScheme.onTertiaryContainer,
+                      ),
+                    ),
+                    shadowColor: Colors.black45,
                   ),
                 ),
                 SliverToBoxAdapter(

@@ -4,11 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:introduction_screen/introduction_screen.dart' as intro;
 import 'package:introduction_screen/introduction_screen.dart';
 
-import 'package:flash_cards/core/constants/ui_constants.dart';
-import 'package:flash_cards/core/extensions/color_extentions.dart';
-import 'package:flash_cards/core/extensions/context_ui_extension.dart';
-import 'package:flash_cards/core/extensions/text_style_extension.dart';
-import 'package:flash_cards/routes/dashboard_route.dart';
+import 'package:word_wise_flash_cards/core/constants/ui_constants.dart';
+import 'package:word_wise_flash_cards/core/extensions/color_extentions.dart';
+import 'package:word_wise_flash_cards/core/extensions/context_ui_extension.dart';
+import 'package:word_wise_flash_cards/core/extensions/text_style_extension.dart';
+import 'package:word_wise_flash_cards/routes/dashboard_route.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -34,29 +34,29 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
     final pages = [
       intro.PageViewModel(
         decoration: decoration,
-        title: "Art and Adventure Companion",
+        title: "👋 Hey WordWise Fam!",
         body:
-            "Get ready to explore amazing city landmarks and enjoy unforgettable experiences without the hassle of planning.",
+            "Welcome to our little corner of the language-learning world! 🌍✨ Just a heads up, WordWise is my passion project – a labor of love aimed at making English essential words a breeze to learn.\n\nNow, let's keep it real. 🚀 This app isn't aiming to be the flashiest flashcard app out there. It's my personal playground, and I'm cooking up some cool features to make it better. But hey, Rome wasn't built in a day, right?",
       ),
       intro.PageViewModel(
         decoration: decoration,
-        title: "Unveiling the Magic of your City",
+        title: "🛠️ Upgrades in the Pipeline",
         body:
-            "Dive into our app to discover hidden gems and thrilling events and arts that will make every day an unforgettable journey.",
+            "I'm rolling up my sleeves to add the stuff you want most, but here's the deal: it won't be perfect. And that's cool! Think of WordWise like your favorite cozy café – it might not have a five-star chef, but it's got heart, and we're in this together.",
       ),
       intro.PageViewModel(
         decoration: decoration,
-        title: "Personalized Adventures at Your Fingertips",
+        title: "🙏 Your Patience is Key",
         body:
-            "Your city adventures are personalized just for you. Find activities that match your preferences, ensuring that each experience is a perfect fit for your taste and style.",
+            "I get it – you might want that whiz-bang feature from the other flashcard giants. Hold tight, and we'll get there, one update at a time. Your feedback is my secret sauce, so if you have thoughts, shout them out!",
       ),
       intro.PageViewModel(
         decoration: decoration,
-        title: "“Speak Friend and Enter”",
+        title: "🚀 Ready to Roll",
         bodyWidget: Column(
           children: [
             Text(
-              "In thy neighborhood, if thou wishest to discern the happenings, grant access to thy location, thou must.",
+              "WordWise might not be aiming for gold, but it's here to make learning essential English words a tad more fun. So, let's dive in, make mistakes, learn, and maybe share a laugh or two along the way.",
               style: decoration.bodyTextStyle,
               textAlign: TextAlign.center,
             ),

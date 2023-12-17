@@ -9,12 +9,11 @@ part of 'flash_card_collection.dart';
 // coverage:ignore-file
 // ignore_for_file: duplicate_ignore, non_constant_identifier_names, constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast, prefer_const_constructors, lines_longer_than_80_chars, require_trailing_commas, inference_failure_on_function_invocation, unnecessary_parenthesis, unnecessary_raw_strings, unnecessary_null_checks, join_return_with_assignment, prefer_final_locals, avoid_js_rounded_ints, avoid_positional_boolean_parameters, always_specify_types
 
-extension GetFlashCardCategoryDbCollection on Isar {
-  IsarCollection<FlashCardCategoryDb> get flashCardCategoryDbs =>
-      this.collection();
+extension GetLessonDbCollection on Isar {
+  IsarCollection<LessonDb> get lessonDbs => this.collection();
 }
 
-final FlashCardCategoryDbSchema = CollectionSchema(
+final LessonDbSchema = CollectionSchema(
   name: r'FlashCardCategoryItems',
   id: BigInt.parse("-6611360001513552200").toInt(),
   properties: {
@@ -44,22 +43,22 @@ final FlashCardCategoryDbSchema = CollectionSchema(
       type: IsarType.string,
     )
   },
-  estimateSize: _flashCardCategoryDbEstimateSize,
-  serialize: _flashCardCategoryDbSerialize,
-  deserialize: _flashCardCategoryDbDeserialize,
-  deserializeProp: _flashCardCategoryDbDeserializeProp,
+  estimateSize: _lessonDbEstimateSize,
+  serialize: _lessonDbSerialize,
+  deserialize: _lessonDbDeserialize,
+  deserializeProp: _lessonDbDeserializeProp,
   idName: r'id',
   indexes: {},
   links: {},
   embeddedSchemas: {},
-  getId: _flashCardCategoryDbGetId,
-  getLinks: _flashCardCategoryDbGetLinks,
-  attach: _flashCardCategoryDbAttach,
+  getId: _lessonDbGetId,
+  getLinks: _lessonDbGetLinks,
+  attach: _lessonDbAttach,
   version: '3.1.0',
 );
 
-int _flashCardCategoryDbEstimateSize(
-  FlashCardCategoryDb object,
+int _lessonDbEstimateSize(
+  LessonDb object,
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
@@ -69,8 +68,8 @@ int _flashCardCategoryDbEstimateSize(
   return bytesCount;
 }
 
-void _flashCardCategoryDbSerialize(
-  FlashCardCategoryDb object,
+void _lessonDbSerialize(
+  LessonDb object,
   IsarWriter writer,
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
@@ -82,13 +81,13 @@ void _flashCardCategoryDbSerialize(
   writer.writeString(offsets[4], object.title);
 }
 
-FlashCardCategoryDb _flashCardCategoryDbDeserialize(
+LessonDb _lessonDbDeserialize(
   Id id,
   IsarReader reader,
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  final object = FlashCardCategoryDb();
+  final object = LessonDb();
   object.id = id;
   object.information = reader.readString(offsets[0]);
   object.isRecent = reader.readBool(offsets[1]);
@@ -98,7 +97,7 @@ FlashCardCategoryDb _flashCardCategoryDbDeserialize(
   return object;
 }
 
-P _flashCardCategoryDbDeserializeProp<P>(
+P _lessonDbDeserializeProp<P>(
   IsarReader reader,
   int propertyId,
   int offset,
@@ -120,33 +119,28 @@ P _flashCardCategoryDbDeserializeProp<P>(
   }
 }
 
-Id _flashCardCategoryDbGetId(FlashCardCategoryDb object) {
+Id _lessonDbGetId(LessonDb object) {
   return object.id;
 }
 
-List<IsarLinkBase<dynamic>> _flashCardCategoryDbGetLinks(
-    FlashCardCategoryDb object) {
+List<IsarLinkBase<dynamic>> _lessonDbGetLinks(LessonDb object) {
   return [];
 }
 
-void _flashCardCategoryDbAttach(
-    IsarCollection<dynamic> col, Id id, FlashCardCategoryDb object) {
+void _lessonDbAttach(IsarCollection<dynamic> col, Id id, LessonDb object) {
   object.id = id;
 }
 
-extension FlashCardCategoryDbQueryWhereSort
-    on QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QWhere> {
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterWhere> anyId() {
+extension LessonDbQueryWhereSort on QueryBuilder<LessonDb, LessonDb, QWhere> {
+  QueryBuilder<LessonDb, LessonDb, QAfterWhere> anyId() {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(const IdWhereClause.any());
     });
   }
 }
 
-extension FlashCardCategoryDbQueryWhere
-    on QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QWhereClause> {
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterWhereClause>
-      idEqualTo(Id id) {
+extension LessonDbQueryWhere on QueryBuilder<LessonDb, LessonDb, QWhereClause> {
+  QueryBuilder<LessonDb, LessonDb, QAfterWhereClause> idEqualTo(Id id) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(IdWhereClause.between(
         lower: id,
@@ -155,8 +149,7 @@ extension FlashCardCategoryDbQueryWhere
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterWhereClause>
-      idNotEqualTo(Id id) {
+  QueryBuilder<LessonDb, LessonDb, QAfterWhereClause> idNotEqualTo(Id id) {
     return QueryBuilder.apply(this, (query) {
       if (query.whereSort == Sort.asc) {
         return query
@@ -178,8 +171,8 @@ extension FlashCardCategoryDbQueryWhere
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterWhereClause>
-      idGreaterThan(Id id, {bool include = false}) {
+  QueryBuilder<LessonDb, LessonDb, QAfterWhereClause> idGreaterThan(Id id,
+      {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
         IdWhereClause.greaterThan(lower: id, includeLower: include),
@@ -187,8 +180,8 @@ extension FlashCardCategoryDbQueryWhere
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterWhereClause>
-      idLessThan(Id id, {bool include = false}) {
+  QueryBuilder<LessonDb, LessonDb, QAfterWhereClause> idLessThan(Id id,
+      {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
         IdWhereClause.lessThan(upper: id, includeUpper: include),
@@ -196,8 +189,7 @@ extension FlashCardCategoryDbQueryWhere
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterWhereClause>
-      idBetween(
+  QueryBuilder<LessonDb, LessonDb, QAfterWhereClause> idBetween(
     Id lowerId,
     Id upperId, {
     bool includeLower = true,
@@ -214,10 +206,9 @@ extension FlashCardCategoryDbQueryWhere
   }
 }
 
-extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
-    FlashCardCategoryDb, QFilterCondition> {
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      idEqualTo(Id value) {
+extension LessonDbQueryFilter
+    on QueryBuilder<LessonDb, LessonDb, QFilterCondition> {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> idEqualTo(Id value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'id',
@@ -226,8 +217,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      idGreaterThan(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> idGreaterThan(
     Id value, {
     bool include = false,
   }) {
@@ -240,8 +230,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      idLessThan(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> idLessThan(
     Id value, {
     bool include = false,
   }) {
@@ -254,8 +243,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      idBetween(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> idBetween(
     Id lower,
     Id upper, {
     bool includeLower = true,
@@ -272,8 +260,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      informationEqualTo(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> informationEqualTo(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -286,7 +273,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition>
       informationGreaterThan(
     String value, {
     bool include = false,
@@ -302,8 +289,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      informationLessThan(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> informationLessThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -318,8 +304,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      informationBetween(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> informationBetween(
     String lower,
     String upper, {
     bool includeLower = true,
@@ -338,8 +323,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      informationStartsWith(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> informationStartsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -352,8 +336,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      informationEndsWith(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> informationEndsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -366,8 +349,9 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      informationContains(String value, {bool caseSensitive = true}) {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> informationContains(
+      String value,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
         property: r'information',
@@ -377,8 +361,9 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      informationMatches(String pattern, {bool caseSensitive = true}) {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> informationMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
         property: r'information',
@@ -388,8 +373,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      informationIsEmpty() {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> informationIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'information',
@@ -398,7 +382,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition>
       informationIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
@@ -408,8 +392,8 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      isRecentEqualTo(bool value) {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> isRecentEqualTo(
+      bool value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'isRecent',
@@ -418,8 +402,8 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      lastCardIndexEqualTo(int value) {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> lastCardIndexEqualTo(
+      int value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'lastCardIndex',
@@ -428,7 +412,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition>
       lastCardIndexGreaterThan(
     int value, {
     bool include = false,
@@ -442,8 +426,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      lastCardIndexLessThan(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> lastCardIndexLessThan(
     int value, {
     bool include = false,
   }) {
@@ -456,8 +439,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      lastCardIndexBetween(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> lastCardIndexBetween(
     int lower,
     int upper, {
     bool includeLower = true,
@@ -474,8 +456,8 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      lastUpdateEqualTo(DateTime value) {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> lastUpdateEqualTo(
+      DateTime value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'lastUpdate',
@@ -484,8 +466,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      lastUpdateGreaterThan(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> lastUpdateGreaterThan(
     DateTime value, {
     bool include = false,
   }) {
@@ -498,8 +479,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      lastUpdateLessThan(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> lastUpdateLessThan(
     DateTime value, {
     bool include = false,
   }) {
@@ -512,8 +492,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      lastUpdateBetween(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> lastUpdateBetween(
     DateTime lower,
     DateTime upper, {
     bool includeLower = true,
@@ -530,8 +509,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleEqualTo(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleEqualTo(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -544,8 +522,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleGreaterThan(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleGreaterThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -560,8 +537,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleLessThan(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleLessThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -576,8 +552,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleBetween(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleBetween(
     String lower,
     String upper, {
     bool includeLower = true,
@@ -596,8 +571,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleStartsWith(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleStartsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -610,8 +584,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleEndsWith(
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleEndsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -624,8 +597,9 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleContains(String value, {bool caseSensitive = true}) {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleContains(
+      String value,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
         property: r'title',
@@ -635,8 +609,9 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleMatches(String pattern, {bool caseSensitive = true}) {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
         property: r'title',
@@ -646,8 +621,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleIsEmpty() {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'title',
@@ -656,8 +630,7 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterFilterCondition>
-      titleIsNotEmpty() {
+  QueryBuilder<LessonDb, LessonDb, QAfterFilterCondition> titleIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'title',
@@ -667,246 +640,217 @@ extension FlashCardCategoryDbQueryFilter on QueryBuilder<FlashCardCategoryDb,
   }
 }
 
-extension FlashCardCategoryDbQueryObject on QueryBuilder<FlashCardCategoryDb,
-    FlashCardCategoryDb, QFilterCondition> {}
+extension LessonDbQueryObject
+    on QueryBuilder<LessonDb, LessonDb, QFilterCondition> {}
 
-extension FlashCardCategoryDbQueryLinks on QueryBuilder<FlashCardCategoryDb,
-    FlashCardCategoryDb, QFilterCondition> {}
+extension LessonDbQueryLinks
+    on QueryBuilder<LessonDb, LessonDb, QFilterCondition> {}
 
-extension FlashCardCategoryDbQuerySortBy
-    on QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QSortBy> {
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByInformation() {
+extension LessonDbQuerySortBy on QueryBuilder<LessonDb, LessonDb, QSortBy> {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByInformation() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'information', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByInformationDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByInformationDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'information', Sort.desc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByIsRecent() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByIsRecent() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'isRecent', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByIsRecentDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByIsRecentDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'isRecent', Sort.desc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByLastCardIndex() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByLastCardIndex() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'lastCardIndex', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByLastCardIndexDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByLastCardIndexDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'lastCardIndex', Sort.desc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByLastUpdate() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByLastUpdate() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'lastUpdate', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByLastUpdateDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByLastUpdateDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'lastUpdate', Sort.desc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByTitle() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByTitle() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'title', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      sortByTitleDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> sortByTitleDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'title', Sort.desc);
     });
   }
 }
 
-extension FlashCardCategoryDbQuerySortThenBy
-    on QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QSortThenBy> {
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenById() {
+extension LessonDbQuerySortThenBy
+    on QueryBuilder<LessonDb, LessonDb, QSortThenBy> {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenById() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByIdDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByIdDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id', Sort.desc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByInformation() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByInformation() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'information', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByInformationDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByInformationDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'information', Sort.desc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByIsRecent() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByIsRecent() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'isRecent', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByIsRecentDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByIsRecentDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'isRecent', Sort.desc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByLastCardIndex() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByLastCardIndex() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'lastCardIndex', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByLastCardIndexDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByLastCardIndexDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'lastCardIndex', Sort.desc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByLastUpdate() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByLastUpdate() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'lastUpdate', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByLastUpdateDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByLastUpdateDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'lastUpdate', Sort.desc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByTitle() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByTitle() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'title', Sort.asc);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QAfterSortBy>
-      thenByTitleDesc() {
+  QueryBuilder<LessonDb, LessonDb, QAfterSortBy> thenByTitleDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'title', Sort.desc);
     });
   }
 }
 
-extension FlashCardCategoryDbQueryWhereDistinct
-    on QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QDistinct> {
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QDistinct>
-      distinctByInformation({bool caseSensitive = true}) {
+extension LessonDbQueryWhereDistinct
+    on QueryBuilder<LessonDb, LessonDb, QDistinct> {
+  QueryBuilder<LessonDb, LessonDb, QDistinct> distinctByInformation(
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'information', caseSensitive: caseSensitive);
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QDistinct>
-      distinctByIsRecent() {
+  QueryBuilder<LessonDb, LessonDb, QDistinct> distinctByIsRecent() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'isRecent');
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QDistinct>
-      distinctByLastCardIndex() {
+  QueryBuilder<LessonDb, LessonDb, QDistinct> distinctByLastCardIndex() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'lastCardIndex');
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QDistinct>
-      distinctByLastUpdate() {
+  QueryBuilder<LessonDb, LessonDb, QDistinct> distinctByLastUpdate() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'lastUpdate');
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QDistinct>
-      distinctByTitle({bool caseSensitive = true}) {
+  QueryBuilder<LessonDb, LessonDb, QDistinct> distinctByTitle(
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'title', caseSensitive: caseSensitive);
     });
   }
 }
 
-extension FlashCardCategoryDbQueryProperty
-    on QueryBuilder<FlashCardCategoryDb, FlashCardCategoryDb, QQueryProperty> {
-  QueryBuilder<FlashCardCategoryDb, int, QQueryOperations> idProperty() {
+extension LessonDbQueryProperty
+    on QueryBuilder<LessonDb, LessonDb, QQueryProperty> {
+  QueryBuilder<LessonDb, int, QQueryOperations> idProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'id');
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, String, QQueryOperations>
-      informationProperty() {
+  QueryBuilder<LessonDb, String, QQueryOperations> informationProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'information');
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, bool, QQueryOperations> isRecentProperty() {
+  QueryBuilder<LessonDb, bool, QQueryOperations> isRecentProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'isRecent');
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, int, QQueryOperations>
-      lastCardIndexProperty() {
+  QueryBuilder<LessonDb, int, QQueryOperations> lastCardIndexProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'lastCardIndex');
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, DateTime, QQueryOperations>
-      lastUpdateProperty() {
+  QueryBuilder<LessonDb, DateTime, QQueryOperations> lastUpdateProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'lastUpdate');
     });
   }
 
-  QueryBuilder<FlashCardCategoryDb, String, QQueryOperations> titleProperty() {
+  QueryBuilder<LessonDb, String, QQueryOperations> titleProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'title');
     });

@@ -10,7 +10,7 @@ _$HomeStateImpl _$$HomeStateImplFromJson(Map<String, dynamic> json) =>
     _$HomeStateImpl(
       flashCardCategory: json['flashCardCategory'] == null
           ? null
-          : FlashCardCategoryData.fromJson(
+          : LessonData.fromJson(
               json['flashCardCategory'] as Map<String, dynamic>),
       flashCards: (json['flashCards'] as List<dynamic>?)
           ?.map((e) => FlashCardData.fromJson(e as Map<String, dynamic>))

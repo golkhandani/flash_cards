@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flash_cards/core/extensions/text_style_extension.dart';
+import 'package:word_wise_flash_cards/core/extensions/text_style_extension.dart';
 
 class CardContainer extends StatelessWidget {
   const CardContainer({

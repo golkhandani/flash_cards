@@ -2,35 +2,54 @@ import 'package:flutter/widgets.dart';
 
 import 'package:get_it/get_it.dart';
 
-abstract class ValueStateModel {
-  ValueStateModel();
+class VsmUnregistrable<C extends VsmController> {
+  void unregister() {
+    Vsm.get<C>()._dispose();
+  }
 }
 
-abstract class ValueStateController<S extends ValueStateModel> {
+class Vsm {
+  static final _vsm = GetIt.asNewInstance();
+
+  static VsmUnregistrable<C> register<C extends VsmController>(C Function() c) {
+    _vsm.registerLazySingleton<C>(c);
+    return VsmUnregistrable<C>();
+  }
+
+  static L get<L extends VsmController>() {
+    return _vsm.get<L>();
+  }
+}
+
+class VsmModel {
+  VsmModel();
+}
+
+abstract class VsmController<M extends VsmModel> {
   int get _historyKey => DateTime.now().millisecondsSinceEpoch;
 
-  late final ValueNotifier<S> _stateNotifier;
-  late final Map<int, S> _stateHistory = {};
+  late final ValueNotifier<M> _stateNotifier;
+  late final Map<int, M> _stateHistory = {};
   late final Map<int, void Function()> _listeners = {};
-  ValueStateController(S initState) {
+  VsmController(M initState) {
     _stateNotifier = ValueNotifier(initState);
     _stateHistory.putIfAbsent(_historyKey, () => initState);
   }
 
-  List<S> get history => _stateHistory.values.toList();
-  S get oldState => _stateHistory.values.last;
-  S get currentState => _stateNotifier.value;
+  List<M> get history => _stateHistory.values.toList();
+  M get previousValue => _stateHistory.values.last;
+  M get value => _stateNotifier.value;
 
-  void addListener(void Function(S o, S n) listener) {
+  void addListener(void Function(M p, M v) listener) {
     if (_listeners.containsKey(listener.hashCode)) {
       return;
     }
-    ln() => listener(oldState, currentState);
+    ln() => listener(previousValue, value);
     _listeners.putIfAbsent(listener.hashCode, () => ln);
     _stateNotifier.addListener(ln);
   }
 
-  void removeListener(void Function(S o, S n) listener) {
+  void removeListener(void Function(M p, M v) listener) {
     if (!_listeners.containsKey(listener.hashCode)) {
       return;
     }
@@ -38,12 +57,12 @@ abstract class ValueStateController<S extends ValueStateModel> {
     _listeners.remove(listener.hashCode);
   }
 
-  void notify(S currentState) {
+  void notify(M value) {
     if (_stateHistory.length >= 10) {
       _stateHistory.remove(_stateHistory.keys.first);
     }
     _stateHistory.putIfAbsent(_historyKey, () => _stateNotifier.value);
-    _stateNotifier.value = currentState;
+    _stateNotifier.value = value;
   }
 
   void _dispose() {
@@ -52,47 +71,21 @@ abstract class ValueStateController<S extends ValueStateModel> {
   }
 }
 
-class UnregistrableController<L extends ValueStateController> {
-  void unregister() {
-    ValueState.getController<L>()._dispose();
-  }
-}
-
-class ValueState<L extends ValueStateController<S>, S extends ValueStateModel>
+class VsmView<C extends VsmController<M>, M extends VsmModel>
     extends StatelessWidget {
-  static final _vsRegistry = GetIt.asNewInstance();
-
-  static UnregistrableController<L>
-      registerController<L extends ValueStateController>(L Function() l) {
-    _vsRegistry.registerLazySingleton<L>(l);
-    return UnregistrableController<L>();
-  }
-
-  static L getController<L extends ValueStateController>() {
-    return _vsRegistry.get<L>();
-  }
-
-  const ValueState._({
-    required L logic,
+  const VsmView({
     required this.builder,
     super.key,
-  }) : _logic = logic;
+  });
 
-  factory ValueState.builder({
-    required Widget Function(BuildContext c, S s) builder,
-  }) =>
-      ValueState._(
-        logic: ValueState.getController<L>(),
-        builder: builder,
-      );
+  final Widget Function(BuildContext context, M value) builder;
 
-  final L _logic;
-  final Widget Function(BuildContext c, S s) builder;
+  C get _controller => Vsm.get<C>();
 
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-      valueListenable: _logic._stateNotifier,
+      valueListenable: _controller._stateNotifier,
       builder: (context, value, child) {
         return builder(context, value);
       },

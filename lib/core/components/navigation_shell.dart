@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 
 import 'package:collection/collection.dart';
 
-import 'package:flash_cards/core/components/card_container.dart';
-import 'package:flash_cards/core/components/navigation_item.dart';
-import 'package:flash_cards/core/components/scaffold_shell.dart';
-import 'package:flash_cards/core/constants/ui_constants.dart';
-import 'package:flash_cards/core/extensions/context_ui_extension.dart';
-import 'package:flash_cards/core/extensions/text_style_extension.dart';
+import 'package:word_wise_flash_cards/core/components/card_container.dart';
+import 'package:word_wise_flash_cards/core/components/navigation_item.dart';
+import 'package:word_wise_flash_cards/core/components/scaffold_shell.dart';
+import 'package:word_wise_flash_cards/core/constants/ui_constants.dart';
+import 'package:word_wise_flash_cards/core/extensions/context_ui_extension.dart';
+import 'package:word_wise_flash_cards/core/extensions/text_style_extension.dart';
 
 final kBlurConfig = ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0);
 
@@ -366,12 +366,17 @@ class _NavigationShellState extends State<NavigationShell> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(e.iconData, color: color),
-                          const SizedBox(height: 2),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 12),
+                            child: Icon(e.iconData, color: color),
+                          ),
                           Text(
                             e.label ?? '',
-                            style: context.textTheme.bodyMedium!
-                                .copyWith(color: color),
+                            style: context.textTheme.bodySmall!.copyWith(
+                              color: color,
+                              letterSpacing: 1.2,
+                              height: 0.5,
+                            ),
                           ),
                         ],
                       ),

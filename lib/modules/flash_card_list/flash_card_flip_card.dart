@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:page_flip_builder/page_flip_builder.dart';
 
-import 'package:flash_cards/core/extensions/string_extensions.dart';
-import 'package:flash_cards/modules/flash_card_list/data/flash_card_data.dart';
+import 'package:word_wise_flash_cards/core/extensions/string_extensions.dart';
+import 'package:word_wise_flash_cards/modules/flash_card_list/data/flash_card_data.dart';
 
 class FlashCardFlipCard extends StatelessWidget {
   final FlashCardData flashCardData;

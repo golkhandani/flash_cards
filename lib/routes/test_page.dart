@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:word_wise_flash_cards/core/extensions/text_style_extension.dart';
+
 class MyBackButton extends StatelessWidget {
   const MyBackButton({
     super.key,
@@ -27,7 +29,7 @@ class MyBackButton extends StatelessWidget {
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,
       icon: const BackButtonIcon(),
-      color: color,
+      color: color ?? context.colorScheme.onTertiaryContainer,
       tooltip: MaterialLocalizations.of(context).backButtonTooltip,
       onPressed: () {
         if (onPressed != null) {

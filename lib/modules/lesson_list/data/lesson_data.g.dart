@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'flash_card_category_data.dart';
+part of 'lesson_data.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FlashCardCategoryDataImpl _$$FlashCardCategoryDataImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FlashCardCategoryDataImpl(
+_$LessonDataImpl _$$LessonDataImplFromJson(Map<String, dynamic> json) =>
+    _$LessonDataImpl(
       id: json['id'] as String,
       title: json['title'] as String,
       information: json['information'] as String,
@@ -17,8 +16,7 @@ _$FlashCardCategoryDataImpl _$$FlashCardCategoryDataImplFromJson(
       lastUpdate: DateTime.parse(json['lastUpdate'] as String),
     );
 
-Map<String, dynamic> _$$FlashCardCategoryDataImplToJson(
-        _$FlashCardCategoryDataImpl instance) =>
+Map<String, dynamic> _$$LessonDataImplToJson(_$LessonDataImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

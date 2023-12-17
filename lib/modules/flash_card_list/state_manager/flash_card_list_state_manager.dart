@@ -1,20 +1,20 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:isar/isar.dart';
 
-import 'package:flash_cards/core/state_manager.dart';
-import 'package:flash_cards/main.dart';
-import 'package:flash_cards/modules/database/flash_card_collection.dart';
-import 'package:flash_cards/modules/flash_card_category/data/flash_card_category_data.dart';
-import 'package:flash_cards/modules/flash_card_list/data/flash_card_data.dart';
-import 'package:flash_cards/modules/home/state_manager/home_state_manager.dart';
+import 'package:word_wise_flash_cards/core/database/flash_card_collection.dart';
+import 'package:word_wise_flash_cards/core/state_manager.dart';
+import 'package:word_wise_flash_cards/main.dart';
+import 'package:word_wise_flash_cards/modules/flash_card_list/data/flash_card_data.dart';
+import 'package:word_wise_flash_cards/modules/home/state_manager/home_state_manager.dart';
+import 'package:word_wise_flash_cards/modules/lesson_list/data/lesson_data.dart';
 
 part 'flash_card_list_state_manager.freezed.dart';
 part 'flash_card_list_state_manager.g.dart';
 
 @freezed
-class FlashCardListState extends ValueStateModel with _$FlashCardListState {
+class FlashCardListState extends VsmModel with _$FlashCardListState {
   const factory FlashCardListState({
-    FlashCardCategoryData? category,
+    LessonData? category,
     @Default(false) bool isLoading,
     @Default([]) List<FlashCardData> flashCards,
     @Default(0) int initialIndex,
@@ -25,16 +25,15 @@ class FlashCardListState extends ValueStateModel with _$FlashCardListState {
       _$FlashCardListStateFromJson(json);
 }
 
-class FlashCardListLogic extends ValueStateController<FlashCardListState> {
+class FlashCardListController extends VsmController<FlashCardListState> {
   final _isar = getIt.get<Isar>();
   late final _flashCardsCollection = _isar.collection<FlashCardDb>();
-  late final _flashCardCategoryCollection =
-      _isar.collection<FlashCardCategoryDb>();
-  late final _homeLogic = ValueState.getController<HomeLogic>();
+  late final _flashCardCategoryCollection = _isar.collection<LessonDb>();
+  late final _homeLogic = Vsm.get<HomeController>();
 
-  FlashCardListLogic() : super(const FlashCardListState());
+  FlashCardListController() : super(const FlashCardListState());
   Future<void> loadData(String categoryId) async {
-    notify(currentState.copyWith(isLoading: true));
+    notify(value.copyWith(isLoading: true));
 
     final category =
         await _flashCardCategoryCollection.get(int.tryParse(categoryId) ?? -1);
@@ -48,11 +47,11 @@ class FlashCardListLogic extends ValueStateController<FlashCardListState> {
         .categoryIdsElementEqualTo(int.tryParse(categoryId) ?? 0)
         .findAll();
     notify(
-      currentState.copyWith(
+      value.copyWith(
         isLoading: false,
         initialIndex: category.lastCardIndex.clamp(0, allFlashCards.length - 1),
         currentIndex: category.lastCardIndex,
-        category: FlashCardCategoryData.fromDb(category),
+        category: LessonData.fromDb(category),
         flashCards: allFlashCards
             .map(
               (e) => FlashCardData(
@@ -70,14 +69,14 @@ class FlashCardListLogic extends ValueStateController<FlashCardListState> {
   }
 
   Future<void> updateCurrentIndex(int index) async {
-    notify(currentState.copyWith(
+    notify(value.copyWith(
       currentIndex: index,
-      initialIndex: index.clamp(0, currentState.flashCards.length - 1),
+      initialIndex: index.clamp(0, value.flashCards.length - 1),
     ));
 
     await _isar.writeTxn(() async {
-      final category = await _flashCardCategoryCollection
-          .get(int.parse(currentState.category!.id));
+      final category =
+          await _flashCardCategoryCollection.get(int.parse(value.category!.id));
       if (category == null) {
         return;
       }
@@ -86,8 +85,8 @@ class FlashCardListLogic extends ValueStateController<FlashCardListState> {
       category.lastUpdate = DateTime.now();
       await _flashCardCategoryCollection.put(category);
       notify(
-        currentState.copyWith(
-          category: FlashCardCategoryData.fromDb(category),
+        value.copyWith(
+          category: LessonData.fromDb(category),
         ),
       );
     });

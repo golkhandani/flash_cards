@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:flash_cards/core/components/navigation_item.dart';
-import 'package:flash_cards/core/components/navigation_shell.dart';
-import 'package:flash_cards/core/extensions/text_style_extension.dart';
-import 'package:flash_cards/routes/categories_route.dart';
-import 'package:flash_cards/routes/home_route.dart';
-import 'package:flash_cards/routes/quiz_route.dart';
+import 'package:word_wise_flash_cards/core/components/navigation_item.dart';
+import 'package:word_wise_flash_cards/core/components/navigation_shell.dart';
+import 'package:word_wise_flash_cards/core/extensions/text_style_extension.dart';
+import 'package:word_wise_flash_cards/routes/about_route.dart';
+import 'package:word_wise_flash_cards/routes/home_route.dart';
+import 'package:word_wise_flash_cards/routes/lesson_list_route.dart';
 
 class DashboardScreen extends StatelessWidget {
   static String name = 'dashboard';
@@ -29,8 +29,8 @@ class DashboardWrapper extends StatelessWidget {
 
   static Map<String, int> dashboardRouteNameToSelectedIndexMap = {
     homeRoute.name!: 0,
-    dashboarCategoriesRoute.name!: 1,
-    quizRoute.name!: 2,
+    dashboarLessonListRoute.name!: 1,
+    aboutRoute.name!: 2,
   };
 
   @override
@@ -54,15 +54,15 @@ class DashboardWrapper extends StatelessWidget {
     final items = [
       NavigationItem(
         iconData: Icons.home_outlined,
-        label: 'Home',
+        label: homeRoute.name?.toUpperCase(),
       ),
       NavigationItem(
         iconData: Icons.list_alt,
-        label: 'Categories',
+        label: dashboarLessonListRoute.name?.toUpperCase(),
       ),
       NavigationItem(
         iconData: Icons.question_answer_outlined,
-        label: 'Quiz',
+        label: aboutRoute.name?.toUpperCase(),
       ),
     ];
 

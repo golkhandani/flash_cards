@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:flash_cards/routes/categories_route.dart';
-import 'package:flash_cards/routes/flash_card_detail_route.dart';
-import 'package:flash_cards/routes/home_route.dart';
-import 'package:flash_cards/routes/quiz_route.dart';
-import 'package:flash_cards/screens/dashboard_screen.dart';
+import 'package:word_wise_flash_cards/routes/about_route.dart';
+import 'package:word_wise_flash_cards/routes/flash_card_detail_route.dart';
+import 'package:word_wise_flash_cards/routes/home_route.dart';
+import 'package:word_wise_flash_cards/routes/lesson_list_route.dart';
+import 'package:word_wise_flash_cards/screens/dashboard_screen.dart';
 
 Page<void> dashboardPageBuilder(GoRouterState state, Widget screen) {
   return CustomTransitionPage<void>(
@@ -70,15 +70,15 @@ final dashboardShellRoutes = StatefulShellRoute.indexedStack(
       ],
     ),
 
-    /// CATEGORIES PAGE
+    /// LESSONS PAGE
     StatefulShellBranch(
       routes: <RouteBase>[
         GoRoute(
-          name: dashboarCategoriesRoute.name!,
-          path: dashboarCategoriesRoute.path,
+          name: dashboarLessonListRoute.name!,
+          path: dashboarLessonListRoute.path,
           pageBuilder: (context, state) => dashboardPageBuilder(
             state,
-            dashboarCategoriesRoute.builder!(context, state),
+            dashboarLessonListRoute.builder!(context, state),
           ),
           routes: [
             categoriesflashCardListRoute,
@@ -87,15 +87,15 @@ final dashboardShellRoutes = StatefulShellRoute.indexedStack(
       ],
     ),
 
-    /// QUIZ PAGE
+    /// ABOUT PAGE
     StatefulShellBranch(
       routes: <RouteBase>[
         GoRoute(
-          name: quizRoute.name!,
-          path: quizRoute.path,
+          name: aboutRoute.name!,
+          path: aboutRoute.path,
           pageBuilder: (context, state) => dashboardPageBuilder(
             state,
-            quizRoute.builder!(context, state),
+            aboutRoute.builder!(context, state),
           ),
         ),
       ],

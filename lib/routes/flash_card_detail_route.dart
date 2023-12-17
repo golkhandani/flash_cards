@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 
-import 'package:flash_cards/modules/flash_card_list/flash_cards_screen.dart';
+import 'package:word_wise_flash_cards/modules/flash_card_list/flash_cards_screen.dart';
 
 const flashCardListCategoryIdParam = 'categoryId';
 final categoriesflashCardListRoute = GoRoute(

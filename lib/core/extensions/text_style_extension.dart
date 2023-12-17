@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flash_cards/core/extensions/context_ui_extension.dart';
+import 'package:word_wise_flash_cards/core/extensions/context_ui_extension.dart';
 
 extension TextStyleContext on BuildContext {
   ColorScheme get colorScheme => theme.colorScheme;

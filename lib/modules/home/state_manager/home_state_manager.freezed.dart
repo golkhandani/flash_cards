@@ -20,8 +20,7 @@ HomeState _$HomeStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HomeState {
-  FlashCardCategoryData? get flashCardCategory =>
-      throw _privateConstructorUsedError;
+  LessonData? get flashCardCategory => throw _privateConstructorUsedError;
   List<FlashCardData>? get flashCards => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
@@ -37,11 +36,11 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {FlashCardCategoryData? flashCardCategory,
+      {LessonData? flashCardCategory,
       List<FlashCardData>? flashCards,
       bool isLoading});
 
-  $FlashCardCategoryDataCopyWith<$Res>? get flashCardCategory;
+  $LessonDataCopyWith<$Res>? get flashCardCategory;
 }
 
 /// @nodoc
@@ -65,7 +64,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       flashCardCategory: freezed == flashCardCategory
           ? _value.flashCardCategory
           : flashCardCategory // ignore: cast_nullable_to_non_nullable
-              as FlashCardCategoryData?,
+              as LessonData?,
       flashCards: freezed == flashCards
           ? _value.flashCards
           : flashCards // ignore: cast_nullable_to_non_nullable
@@ -79,13 +78,12 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 
   @override
   @pragma('vm:prefer-inline')
-  $FlashCardCategoryDataCopyWith<$Res>? get flashCardCategory {
+  $LessonDataCopyWith<$Res>? get flashCardCategory {
     if (_value.flashCardCategory == null) {
       return null;
     }
 
-    return $FlashCardCategoryDataCopyWith<$Res>(_value.flashCardCategory!,
-        (value) {
+    return $LessonDataCopyWith<$Res>(_value.flashCardCategory!, (value) {
       return _then(_value.copyWith(flashCardCategory: value) as $Val);
     });
   }
@@ -100,12 +98,12 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FlashCardCategoryData? flashCardCategory,
+      {LessonData? flashCardCategory,
       List<FlashCardData>? flashCards,
       bool isLoading});
 
   @override
-  $FlashCardCategoryDataCopyWith<$Res>? get flashCardCategory;
+  $LessonDataCopyWith<$Res>? get flashCardCategory;
 }
 
 /// @nodoc
@@ -127,7 +125,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       flashCardCategory: freezed == flashCardCategory
           ? _value.flashCardCategory
           : flashCardCategory // ignore: cast_nullable_to_non_nullable
-              as FlashCardCategoryData?,
+              as LessonData?,
       flashCards: freezed == flashCards
           ? _value._flashCards
           : flashCards // ignore: cast_nullable_to_non_nullable
@@ -153,7 +151,7 @@ class _$HomeStateImpl implements _HomeState {
       _$$HomeStateImplFromJson(json);
 
   @override
-  final FlashCardCategoryData? flashCardCategory;
+  final LessonData? flashCardCategory;
   final List<FlashCardData>? _flashCards;
   @override
   List<FlashCardData>? get flashCards {
@@ -207,7 +205,7 @@ class _$HomeStateImpl implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
-      {final FlashCardCategoryData? flashCardCategory,
+      {final LessonData? flashCardCategory,
       final List<FlashCardData>? flashCards,
       final bool isLoading}) = _$HomeStateImpl;
 
@@ -215,7 +213,7 @@ abstract class _HomeState implements HomeState {
       _$HomeStateImpl.fromJson;
 
   @override
-  FlashCardCategoryData? get flashCardCategory;
+  LessonData? get flashCardCategory;
   @override
   List<FlashCardData>? get flashCards;
   @override
