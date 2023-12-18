@@ -33,10 +33,19 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
     );
     final pages = [
       intro.PageViewModel(
-        decoration: decoration,
+        decoration:
+            decoration.copyWith(pageMargin: const EdgeInsets.only(top: 100)),
         title: "👋 Hey WordWise Fam!",
-        body:
-            "Welcome to our little corner of the language-learning world! 🌍✨ Just a heads up, WordWise is my passion project – a labor of love aimed at making English essential words a breeze to learn.\n\nNow, let's keep it real. 🚀 This app isn't aiming to be the flashiest flashcard app out there. It's my personal playground, and I'm cooking up some cool features to make it better. But hey, Rome wasn't built in a day, right?",
+        bodyWidget: Column(
+          children: [
+            Text(
+              "Welcome to our little corner of the language-learning world! 🌍✨ Just a heads up, WordWise is my passion project – a labor of love aimed at making English essential words a breeze to learn.\n\nNow, let's keep it real. 🚀 This app isn't aiming to be the flashiest flashcard app out there. It's my personal playground, and I'm cooking up some cool features to make it better. But hey, Rome wasn't built in a day, right?",
+              style: decoration.bodyTextStyle,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 148),
+          ],
+        ),
       ),
       intro.PageViewModel(
         decoration: decoration,

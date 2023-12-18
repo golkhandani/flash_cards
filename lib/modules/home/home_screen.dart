@@ -91,91 +91,100 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                         .toList();
 
-                    return IntrinsicHeight(
-                      child: Card(
-                        color: const Color.fromARGB(255, 166, 202, 253),
-                        child: Container(
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              const Text(
-                                'Pick up where you left off!',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              const SizedBox(height: 16),
-                              Text(
-                                'Continue exploring the last flash cards from ${state.flashCardCategory?.title ?? ''}!',
-                                style: const TextStyle(fontSize: 14),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  context.goNamed(
-                                    homeflashCardListRoute.name!,
-                                    pathParameters: {
-                                      flashCardListCategoryIdParam: state
-                                              .flashCardCategory?.id
-                                              .toString() ??
-                                          '-1',
-                                    },
-                                  );
-                                },
-                                child: AbsorbPointer(
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 32),
-                                    child: SizedBox(
-                                      height:
-                                          MediaQuery.sizeOf(context).height / 3,
-                                      child: CardSwiper(
-                                        cardsCount: 2,
-                                        numberOfCardsDisplayed: 2,
-                                        cardBuilder: (context, index, _, __) {
-                                          return previewItems[index];
-                                        },
-                                      ),
+                    return Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 600),
+                        child: IntrinsicHeight(
+                          child: Card(
+                            color: const Color.fromARGB(255, 166, 202, 253),
+                            child: Container(
+                              padding: const EdgeInsets.all(16),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  const Text(
+                                    'Pick up where you left off!',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                ),
-                              ),
-                              const Spacer(),
-                              Wrap(
-                                crossAxisAlignment: WrapCrossAlignment.start,
-                                runAlignment: WrapAlignment.start,
-                                runSpacing: 16,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: ElevatedButton(
-                                          onPressed: () {
-                                            context.goNamed(
-                                              homeflashCardListRoute.name!,
-                                              pathParameters: {
-                                                flashCardListCategoryIdParam:
-                                                    state.flashCardCategory?.id
-                                                            .toString() ??
-                                                        '-1',
-                                              },
-                                            );
-                                          },
-                                          child: Text(
-                                            'Continue Learning!',
-                                            style: TextStyle(
-                                              color:
-                                                  context.colorScheme.onSurface,
-                                            ),
+                                  const SizedBox(height: 16),
+                                  Text(
+                                    'Continue exploring the last flash cards from ${state.flashCardCategory?.title ?? ''}!',
+                                    style: const TextStyle(fontSize: 14),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      context.goNamed(
+                                        homeflashCardListRoute.name!,
+                                        pathParameters: {
+                                          flashCardListCategoryIdParam: state
+                                                  .flashCardCategory?.id
+                                                  .toString() ??
+                                              '-1',
+                                        },
+                                      );
+                                    },
+                                    child: AbsorbPointer(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 32),
+                                        child: SizedBox(
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height /
+                                              3,
+                                          child: CardSwiper(
+                                            cardsCount: 2,
+                                            numberOfCardsDisplayed: 2,
+                                            cardBuilder:
+                                                (context, index, _, __) {
+                                              return previewItems[index];
+                                            },
                                           ),
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
+                                  const Spacer(),
+                                  Wrap(
+                                    crossAxisAlignment:
+                                        WrapCrossAlignment.start,
+                                    runAlignment: WrapAlignment.start,
+                                    runSpacing: 16,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: ElevatedButton(
+                                              onPressed: () {
+                                                context.goNamed(
+                                                  homeflashCardListRoute.name!,
+                                                  pathParameters: {
+                                                    flashCardListCategoryIdParam:
+                                                        state.flashCardCategory
+                                                                ?.id
+                                                                .toString() ??
+                                                            '-1',
+                                                  },
+                                                );
+                                              },
+                                              child: Text(
+                                                'Continue Learning!',
+                                                style: TextStyle(
+                                                  color: context
+                                                      .colorScheme.onSurface,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  )
                                 ],
-                              )
-                            ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -184,55 +193,60 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SliverGap(height: 16),
                 SliverToBoxAdapter(
-                  child: IntrinsicHeight(
-                    child: Card(
-                      color: const Color.fromARGB(255, 255, 230, 249),
-                      child: Container(
-                        padding: const EdgeInsets.all(16),
-                        width: MediaQuery.sizeOf(context).width,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            const Text(
-                              '🚀 Hey WordWisers! Ready for a Wild Ride? 🎉',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            Expanded(
-                              child: Text(
-                                requestText,
-                                style: const TextStyle(fontSize: 16),
-                                softWrap: true,
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            Wrap(
-                              crossAxisAlignment: WrapCrossAlignment.start,
-                              runAlignment: WrapAlignment.start,
-                              runSpacing: 16,
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 600),
+                      child: IntrinsicHeight(
+                        child: Card(
+                          color: const Color.fromARGB(255, 255, 230, 249),
+                          child: Container(
+                            padding: const EdgeInsets.all(16),
+                            width: MediaQuery.sizeOf(context).width,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                Row(
+                                const Text(
+                                  '🚀 Hey WordWisers! Ready for a Wild Ride? 🎉',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                Expanded(
+                                  child: Text(
+                                    requestText,
+                                    style: const TextStyle(fontSize: 16),
+                                    softWrap: true,
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                Wrap(
+                                  crossAxisAlignment: WrapCrossAlignment.start,
+                                  runAlignment: WrapAlignment.start,
+                                  runSpacing: 16,
                                   children: [
-                                    Expanded(
-                                      child: ElevatedButton(
-                                        onPressed: openStore,
-                                        child: Text(
-                                          'Give me a feedback!',
-                                          style: TextStyle(
-                                            color:
-                                                context.colorScheme.onSurface,
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: ElevatedButton(
+                                            onPressed: openStore,
+                                            child: Text(
+                                              'Give me a feedback!',
+                                              style: TextStyle(
+                                                color: context
+                                                    .colorScheme.onSurface,
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                      ),
+                                      ],
                                     ),
                                   ],
-                                ),
+                                )
                               ],
-                            )
-                          ],
+                            ),
+                          ),
                         ),
                       ),
                     ),

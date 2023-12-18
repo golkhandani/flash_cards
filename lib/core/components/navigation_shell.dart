@@ -98,7 +98,14 @@ class _NavigationShellState extends State<NavigationShell> {
           padding: EdgeInsets.only(top: safePadding),
           child: widget.child,
         ),
-        if (widget.useFloatingNavBar) _buildFloatingNavigationBar(),
+        if (widget.useFloatingNavBar)
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: widget.items.length * 200),
+              child: _buildFloatingNavigationBar(),
+            ),
+          ),
       ],
     );
   }

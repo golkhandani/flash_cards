@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -74,7 +75,7 @@ Future<bool> loadDB() async {
   return true;
 }
 
-final ColorScheme colorScheme = ColorScheme(
+const ColorScheme colorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color.fromRGBO(159, 62, 255, 1),
   onPrimary: Colors.white,
@@ -255,7 +256,8 @@ void main() async {
   ///
   final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-  final bool shouldShowIntro = prefs.getBool('shouldShowIntro') ?? false;
+  final bool shouldShowIntro =
+      kDebugMode || (prefs.getBool('shouldShowIntro') ?? false);
 
   final router = GoRouter(
     initialLocation:
@@ -305,6 +307,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       theme: ultravioletTheme,
       builder: (context, child) => ResponsiveBreakpoints.builder(
         child: child!,

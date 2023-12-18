@@ -56,7 +56,8 @@ class _LessonListScreenState extends State<LessonListScreen> {
     return Material(
       child: CustomScrollView(
         physics: const NoImplicitScrollPhysics(
-            parent: AlwaysScrollableScrollPhysics()),
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         controller: _scrollController,
         slivers: [
           SliverPinnedHeader(
@@ -99,22 +100,25 @@ class _LessonListScreenState extends State<LessonListScreen> {
                         margin: EdgeInsets.zero,
                         shadowColor: Colors.black45,
                         elevation: 10,
-                        child: Container(
-                          color: context.colorScheme.tertiaryContainer,
-                          height: 64,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12.0,
-                            vertical: 8,
+                        shape: const RoundedRectangleBorder(
+                          side: BorderSide(width: 0, color: Colors.transparent),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
                           ),
-                          child: SizedBox(
+                        ),
+                        child: Center(
+                          child: Container(
+                            color: context.colorScheme.tertiaryContainer,
+                            height: 64,
+                            constraints: const BoxConstraints(maxWidth: 600),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                              vertical: 8,
+                            ),
                             child: Autocomplete<LessonData>(
-                              /// set this in your real apps initialValue: const TextEditingValue(text: 'Hi'),
-                              fieldViewBuilder: (
-                                BuildContext context,
-                                TextEditingController textEditingController,
-                                FocusNode focusNode,
-                                VoidCallback onFieldSubmitted,
-                              ) {
+                              fieldViewBuilder: (context, textEditingController,
+                                  focusNode, onFieldSubmitted) {
                                 return TextFormField(
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
@@ -123,6 +127,8 @@ class _LessonListScreenState extends State<LessonListScreen> {
                                         context.colorScheme.onTertiaryContainer,
                                   ),
                                   decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: context.colorScheme.surface,
                                     hintText: 'Search for lessons',
                                     hintStyle: TextStyle(
                                       textBaseline: TextBaseline.ideographic,
@@ -150,16 +156,17 @@ class _LessonListScreenState extends State<LessonListScreen> {
                                 return Align(
                                   alignment: Alignment.topLeft,
                                   child: Material(
-                                    color:
-                                        context.colorScheme.tertiaryContainer,
+                                    color: context.colorScheme.surface,
                                     elevation: 4.0,
                                     // size works, when placed here below the Material widget
                                     child: Container(
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
-                                      width: MediaQuery.of(context).size.width -
-                                          32,
+                                      width: min(
+                                              MediaQuery.of(context).size.width,
+                                              600) -
+                                          24,
                                       height: min(options.length * 48, 160),
                                       child: ListView.separated(
                                         shrinkWrap: true,
@@ -213,7 +220,13 @@ class _LessonListScreenState extends State<LessonListScreen> {
                         ),
                       ),
                     ),
-                    SliverList(
+                    SliverGrid(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: MediaQuery.sizeOf(context).width > 600
+                            ? MediaQuery.sizeOf(context).width ~/ 300
+                            : 1,
+                        mainAxisExtent: 200,
+                      ),
                       delegate: SliverChildBuilderDelegate(
                         (_, index) {
                           return Padding(

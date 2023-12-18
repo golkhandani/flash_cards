@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:collection/collection.dart';
@@ -102,6 +104,10 @@ class _FlashCardListScreenState extends State<FlashCardListScreen> {
                             ),
                           )
                           .toList();
+                      final double offset =
+                          MediaQuery.sizeOf(context).width > 600
+                              ? (MediaQuery.sizeOf(context).width % 10) * 20
+                              : 2 * 20;
 
                       return Column(
                         children: [
@@ -162,51 +168,70 @@ class _FlashCardListScreenState extends State<FlashCardListScreen> {
                             ),
                           ),
                           const SizedBox(height: 8),
+                          const Spacer(),
                           SizedBox(
-                            height: contentHeight - footerHeight - 48 - 16,
+                            height: min(
+                              contentHeight - footerHeight - 48 - 16,
+                              800,
+                            ),
                             child: Stack(
                               children: [
                                 const Center(child: Text('You are done!')),
-                                CardSwiper(
-                                  controller: _swiperController,
-                                  cardsCount: items.length,
-                                  initialIndex: state.initialIndex,
-                                  isLoop: true,
-                                  backCardOffset: const Offset(0, 40),
-                                  scale: 0.85,
-                                  onSwipe: (p, c, d) {
-                                    _logic
-                                        .updateCurrentIndex(c ?? items.length);
-                                    return true;
-                                  },
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 16,
-                                    vertical: 8,
+                                Center(
+                                  child: ConstrainedBox(
+                                    constraints:
+                                        const BoxConstraints(maxWidth: 600),
+                                    child: CardSwiper(
+                                      controller: _swiperController,
+                                      cardsCount: items.length,
+                                      initialIndex: state.initialIndex,
+                                      isLoop: true,
+                                      backCardOffset: Offset(
+                                        0,
+                                        offset,
+                                      ),
+                                      scale: 0.85,
+                                      onSwipe: (p, c, d) {
+                                        _logic.updateCurrentIndex(
+                                            c ?? items.length);
+                                        return true;
+                                      },
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16,
+                                        vertical: 8,
+                                      ),
+                                      numberOfCardsDisplayed: 5,
+                                      cardBuilder: (_, index, hop, vop) {
+                                        final item = items[index];
+                                        return item;
+                                      },
+                                    ),
                                   ),
-                                  numberOfCardsDisplayed: 5,
-                                  cardBuilder: (_, index, hop, vop) {
-                                    final item = items[index];
-                                    return item;
-                                  },
                                 ),
                               ],
                             ),
                           ),
                           const SizedBox(height: 8),
-                          Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 16),
-                            height: footerHeight - 24,
-                            child: Column(
-                              children: [
-                                const SizedBox(height: 72),
-                                AlwaysVisibleThumbSlider(
-                                  value: state.initialIndex,
-                                  max: state.flashCards.length,
-                                  onChanged: (double value) {
-                                    _logic.updateCurrentIndex(value.toInt());
-                                  },
-                                ),
-                              ],
+                          const Spacer(),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              constraints: const BoxConstraints(maxWidth: 600),
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 16),
+                              height: footerHeight - 24,
+                              child: Column(
+                                children: [
+                                  const SizedBox(height: 72),
+                                  AlwaysVisibleThumbSlider(
+                                    value: state.initialIndex,
+                                    max: state.flashCards.length,
+                                    onChanged: (double value) {
+                                      _logic.updateCurrentIndex(value.toInt());
+                                    },
+                                  ),
+                                ],
+                              ),
                             ),
                           )
                         ],
