@@ -52,75 +52,29 @@ class _AboutScreenState extends State<AboutScreen> {
               shadowColor: Colors.black26,
             ),
           ),
-          SliverFillRemaining(
+          SliverToBoxAdapter(
+            child: IntrinsicHeight(
+              child: Container(
+                padding: const EdgeInsets.all(16),
+                color: context.colorScheme.background,
+                child: const Text(
+                  "Hello users! I'm gearing up for some updates, and I could really use your input to make things awesome. The timeline is as flexible as a rubber band, so if you have thoughts or requests, just drop me a line. I'm here to code your wishes into reality – or, you know, something close to it. Ready for your feedback! 😊👩‍💻🚀",
+                ),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
+              padding: const EdgeInsets.all(32),
+              child: Row(
                 children: [
-                  IntrinsicHeight(
-                    child: Container(
-                      color: context.colorScheme.background,
-                      child: const Text(
-                        "Hello users! I'm gearing up for some updates, and I could really use your input to make things awesome. The timeline is as flexible as a rubber band, so if you have thoughts or requests, just drop me a line. I'm here to code your wishes into reality – or, you know, something close to it. Ready for your feedback! 😊👩‍💻🚀",
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(32),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: ElevatedButton(
-                            onPressed: openStore,
-                            child: Text(
-                              'Give me a feedback!',
-                              style: TextStyle(
-                                color: context.colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   Expanded(
-                    child: Container(
-                      padding: context.viewBottomPaddingWithFooter
-                          .copyWith(left: 16),
-                      child: Timeline.tileBuilder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        padding: EdgeInsets.zero,
-                        shrinkWrap: true,
-                        clipBehavior: Clip.hardEdge,
-                        theme: TimelineThemeData(
-                          color: context.colorScheme.primary,
-                          nodePosition: 0.1,
-                          indicatorPosition: 0.1,
-                        ),
-                        builder: TimelineTileBuilder(
-                          startConnectorBuilder: (context, index) => index == 0
-                              ? null
-                              : SolidLineConnector(
-                                  color: context.colorScheme.primary,
-                                ),
-                          endConnectorBuilder: (context, index) =>
-                              index == roadMap.length - 1
-                                  ? null
-                                  : SolidLineConnector(
-                                      color: context.colorScheme.primary,
-                                    ),
-                          nodePositionBuilder: (context, index) => 0,
-                          indicatorBuilder: (context, index) => DotIndicator(
-                            color: context.colorScheme.primary,
-                          ),
-                          contentsAlign: ContentsAlign.basic,
-                          contentsBuilder: (context, index) => Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 24.0)
-                                    .copyWith(bottom: 24),
-                            child: Text(roadMap[index]),
-                          ),
-                          itemCount: roadMap.length,
+                    child: ElevatedButton(
+                      onPressed: openStore,
+                      child: Text(
+                        'Give me a feedback!',
+                        style: TextStyle(
+                          color: context.colorScheme.onSurface,
                         ),
                       ),
                     ),
@@ -129,6 +83,59 @@ class _AboutScreenState extends State<AboutScreen> {
               ),
             ),
           ),
+          SliverToBoxAdapter(
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              child: Timeline.tileBuilder(
+                physics: const NeverScrollableScrollPhysics(),
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                clipBehavior: Clip.hardEdge,
+                theme: TimelineThemeData(
+                  color: context.colorScheme.primary,
+                  nodePosition: 0.1,
+                  indicatorPosition: 0.1,
+                ),
+                builder: TimelineTileBuilder(
+                  startConnectorBuilder: (context, index) => index == 0
+                      ? null
+                      : SolidLineConnector(
+                          color: context.colorScheme.primary,
+                        ),
+                  endConnectorBuilder: (context, index) =>
+                      index == roadMap.length - 1
+                          ? null
+                          : SolidLineConnector(
+                              color: context.colorScheme.primary,
+                            ),
+                  nodePositionBuilder: (context, index) => 0,
+                  indicatorBuilder: (context, index) => DotIndicator(
+                    color: context.colorScheme.primary,
+                  ),
+                  contentsAlign: ContentsAlign.basic,
+                  contentsBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0)
+                        .copyWith(bottom: 24),
+                    child: Text(roadMap[index]),
+                  ),
+                  itemCount: roadMap.length,
+                ),
+              ),
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Text(
+                'Built with passion and the magic of Flutter ❤️, featuring a symphony of packages:\n- flutter\n- flutter_card_swiper\n- cupertino_icons\n- go_router\n- introduction_screen\n- responsive_framework\n- collection\n- flutter_screenutil\n- freezed_annotation\n- json_annotation\n- sliver_tools\n- flip_card\n- page_flip_builder\n- isar\n- isar_flutter_libs\n- path_provider\n- get_it\n- shared_preferences\n- package_info_plus\n- version\n- open_store\n- flutter_native_splash\n- timelines\n- google_fonts\nThanks to the amazing Flutter community for these incredible tools! 🙌✨',
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: context.viewBottomPaddingWithFooter.bottom,
+            ),
+          )
         ],
       ),
     );
